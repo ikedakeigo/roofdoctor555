@@ -1,0 +1,11 @@
+@use "sass:math";
+
+/*===================================
+ * html font size
+===================================*/
+
+$base-font-size: 16; // 基準となるフォントサイズ
+
+@function rem($pxValue) {
+  @return math.div($pxValue, $base-font-size) * 1rem;
+}

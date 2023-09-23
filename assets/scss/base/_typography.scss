@@ -1,0 +1,52 @@
+/*===================================
+ * colors
+===================================*/
+$main-color: #021f59;
+$sub-color: #072a40;
+$btn-color: #011640;
+$light-color: #5f7092;
+$white-color: #ebf0f2;
+$red-color: #e70012;
+
+/*===================================
+ * color
+===================================*/
+.mh_tRed01 {
+  color: $red-color;
+}
+/*===================================
+ * font
+===================================*/
+
+h2{
+  font-size: rem(26);
+  font-weight: bold;
+}
+
+h6 {
+  font-style: normal;
+  font-weight: bold;
+  line-height: 150%;
+  letter-spacing: 0.06em;
+  color: #9999;
+  margin-bottom: 5px;
+}
+
+/*===================================
+ * 文字
+===================================*/
+
+p {
+  font-size:  rem(64);
+  // font-weight: ;
+  letter-spacing: .0em;
+  // line-height: calc( / );
+}
+
+/*===================================
+ * smGird
+===================================*/
+
+.smGrid {
+  font-size: rem(12);
+}
