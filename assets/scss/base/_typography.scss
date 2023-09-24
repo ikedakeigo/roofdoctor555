@@ -1,3 +1,5 @@
+// _typography.scss: 全体の文字のスタイルや行間、フォントファミリーなどの基本的なタイポグラフィ設定。
+
 /*===================================
  * colors
 ===================================*/
@@ -7,6 +9,99 @@ $btn-color: #011640;
 $light-color: #5f7092;
 $white-color: #ebf0f2;
 $red-color: #e70012;
+$bk-color: #111111;
+$blue-color: #3e9be9;
+
+/*===================================
+ * 全体のサイズ
+===================================*/
+body {
+  @include mq(sm) {
+    max-width: 640px;
+    min-width: 320px;
+  }
+  @include mq(md) {
+    max-width: 1280px;
+    width: 1280px;
+  }
+}
+
+/*===================================
+ * 共通のスタイル
+===================================*/
+
+.wrappeer {
+  position: relative;
+  display: block;
+  clear: both;
+  float: none;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 rem(15);
+}
+
+.util-title {
+  margin-top: rem(144);
+  padding: 0 rem(128);
+  width: 100%;
+}
+
+.main-title {
+  font-size: rem(64);
+  letter-spacing: 5px;
+  font-weight: 700;
+  color: $bk-color;
+}
+
+.sub-title {
+  font-size: rem(20);
+  margin-left: rem(140);
+  font-weight: 700;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+section h3 {
+  font-size: rem(26);
+  font-weight: 500;
+  font-family: "Shippori Mincho", serif;
+  line-height: 1;
+  letter-spacing: 0.1em;
+}
+
+section h2 {
+  position: relative;
+  font-size: rem(40);
+  font-weight: 500;
+  font-family: "Shippori Mincho", serif;
+  text-align: center;
+  line-height: 1;
+  padding-top: rem(100);
+  letter-spacing: 0.1em;
+}
+
+/*===================================
+ * img
+===================================*/
+
+figure img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/*===================================
+ * margin
+===================================*/
+.mb_20 {
+  content: "";
+  display: block;
+  margin-bottom: rem(20);
+}
 
 /*===================================
  * color
@@ -18,7 +113,7 @@ $red-color: #e70012;
  * font
 ===================================*/
 
-h2{
+h2 {
   font-size: rem(26);
   font-weight: bold;
 }
@@ -37,9 +132,9 @@ h6 {
 ===================================*/
 
 p {
-  font-size:  rem(64);
+  font-size: rem(16);
   // font-weight: ;
-  letter-spacing: .0em;
+  letter-spacing: 0em;
   // line-height: calc( / );
 }
 
@@ -49,4 +144,59 @@ p {
 
 .smGrid {
   font-size: rem(12);
+}
+
+/*===================================
+ * flex
+===================================*/
+
+.layout_flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*===================================
+ * tel contact
+===================================*/
+
+.tel {
+  position: relative;
+  display: block;
+  width: 300px;
+  height: 41px;
+  background: url(../images/tel.svg) no-repeat top left;
+  background-size: contain;
+}
+
+/*===================================
+ * ul,li
+===================================*/
+
+ul {
+  letter-spacing: -0.4em;
+  line-height: 0;
+}
+
+li {
+  list-style: none;
+  letter-spacing: normal;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
+/*===================================
+ * pc sp
+===================================*/
+.for-pc {
+  display: block;
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.for-sp {
+  display: none;
+  @include mq(md) {
+    display: block;
+  }
 }

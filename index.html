@@ -3,22 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>池田瓦店</title>
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
   </head>
   <body>
     <header class="header">
       <div class="header__inner">
         <div class="header__logo">
-          <a href="/" class="header__title">池田瓦店</a>
+          <p id="lead">習志野市の雨漏り修理・瓦葺き替え・屋根リフォームは株式会社丸治瓦店へ</p>
+          <a href="/" class="header__title">
+            <img src="https://placehold.jp/411x88.png" alt="" />
+          </a>
         </div>
-        <nav class="header__nav">
-          <ul class="header__list">
-            <li class="header__item"><a href="#" class="header__link">ホーム</a></li>
-            <li class="header__item"><a href="#" class="header__link">商品一覧</a></li>
-            <li class="header__item"><a href="#" class="header__link">お問い合わせ</a></li>
-          </ul>
-        </nav>
+        <div class="header__right for-sp">
+          <div class="header__right--contact layout_flex">
+            <div class="tel">
+              <img src="https://placehold.jp/320x40.png" alt="" />
+              <p>受付時間：平日 9:00〜17:00（日祝定休）</p>
+            </div>
+            <a href="https://maruzi-kawara.com/#contact" class="btn contact">お問い合わせ</a>
+          </div>
+          <nav class="header__nav">
+            <ul class="header__list layout_flex">
+              <li class="header__item"><a href="#" class="header__link">ホーム</a></li>
+              <li class="header__item"><a href="#" class="header__link">商品一覧</a></li>
+              <li class="header__item"><a href="#" class="header__link">お問い合わせ</a></li>
+              <li class="header__item"><a href="#" class="header__link">お問い合わせ</a></li>
+              <li class="header__item"><a href="#" class="header__link">お問い合わせ</a></li>
+              <li class="header__item"><a href="#" class="header__link">お問い合わせ</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
       <!-- spハンバーガー -->
 
@@ -30,7 +47,7 @@
         </div>
       </div>
       <!--開いた時のnav部分-->
-      <div class="drawer-content">
+      <div class="drawer-content for-pc">
         <div class="drawer-content-items">
           <div class="drawer-content-item"><a class="drawer-item-link" href="#about">ホーム</a></div>
           <div class="drawer-content-item"><a class="drawer-item-link" href="#service">商品一覧</a></div>
@@ -45,25 +62,29 @@
 
     <main class="main">
       <section id="slider">
-        <!-- Slider main container -->
-        <div class="swiper">
-          <!-- Additional required wrapper -->
+        <!-- Swiperコンテナの定義 -->
+        <div class="swiper-container swiper">
+          <!-- スライドのラッパー -->
           <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-            ...
+            <!-- 各スライド -->
+            <div class="swiper-slide">
+              <img src="https://placehold.jp/1920x1080.png" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="https://placehold.jp/1920x1080.png" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="https://placehold.jp/1920x1080.png" alt="" />
+            </div>
+            <!-- ... -->
           </div>
-          <!-- If we need pagination -->
-          <div class="swiper-pagination"></div>
-
-          <!-- If we need navigation buttons -->
-          <div class="swiper-button-prev"></div>
+          <!-- ページネーションを追加したい場合 -->
+          <!-- <div class="swiper-pagination"></div> -->
+          <!-- 前後のナビゲーションボタンを追加したい場合 -->
           <div class="swiper-button-next"></div>
-
-          <!-- If we need scrollbar -->
-          <div class="swiper-scrollbar"></div>
+          <div class="swiper-button-prev"></div>
+          <!-- スクロールバーを追加したい場合 -->
+          <!-- <div class="swiper-scrollbar"></div> -->
         </div>
       </section>
 
@@ -72,50 +93,50 @@
         <div class="wrapper">
           <div class="util-title">
             <p class="main-title">NEWS</p>
-            <p class="news-sub-title">お知らせ</p>
+            <p class="sub-title">お知らせ</p>
           </div>
           <div class="newsArea">
-            <ul class="news-items">
-              <li class="news-item">
-                <a href="https://maruzi-kawara.com/401/">
+            <ul class="news-items layout_flex">
+              <li class="news-item itemColum">
+                <a href="#">
                   <div class="pict">
-                    <img src="/images/bnr_02.jpg" alt="お客様アンケート　西脇市" />
+                    <img src="https://placehold.jp/640x360.png" alt="お客様アンケート　西脇市" />
                   </div>
                   <span class="tag"> お客様の声</span>
-                  <span class="date">2023.09.05</span>
+                  <span class="data">2023.09.05</span>
                   <p>お客様アンケート　西脇市</p>
                 </a>
               </li>
 
-              <li class="news-item">
-                <a href="https://maruzi-kawara.com/401/">
+              <li class="news-item itemColum">
+                <a href="#">
                   <div class="pict">
-                    <img src="/images/bnr_02.jpg" alt="お客様アンケート　西脇市" />
+                    <img src="https://placehold.jp/640x360.png" alt="お客様アンケート　西脇市" />
                   </div>
                   <span class="tag"> お客様の声</span>
-                  <span class="date">2023.09.05</span>
+                  <span class="data">2023.09.05</span>
                   <p>お客様アンケート　西脇市</p>
                 </a>
               </li>
 
-              <li class="news-item">
-                <a href="https://maruzi-kawara.com/401/">
+              <li class="news-item itemColum">
+                <a href="#">
                   <div class="pict">
-                    <img src="/images/bnr_02.jpg" alt="お客様アンケート　西脇市" />
+                    <img src="https://placehold.jp/640x360.png" alt="お客様アンケート　西脇市" />
                   </div>
                   <span class="tag"> お客様の声</span>
-                  <span class="date">2023.09.05</span>
+                  <span class="data">2023.09.05</span>
                   <p>お客様アンケート　西脇市</p>
                 </a>
               </li>
 
-              <li class="news-item">
-                <a href="https://maruzi-kawara.com/401/">
+              <li class="news-item itemColum">
+                <a href="#">
                   <div class="pict">
-                    <img src="/images/bnr_02.jpg" alt="お客様アンケート　西脇市" />
+                    <img src="https://placehold.jp/640x360.png" alt="お客様アンケート　西脇市" />
                   </div>
                   <span class="tag"> お客様の声</span>
-                  <span class="date">2023.09.05</span>
+                  <span class="data">2023.09.05</span>
                   <p>お客様アンケート　西脇市</p>
                 </a>
               </li>
@@ -131,11 +152,11 @@
       </section>
 
       <!-- service -->
-      <section class="service" id="service">
+      <section class="service bg-sankaku" id="service">
         <div class="wrappeer">
           <div class="util-title">
             <p class="main-title">service</p>
-            <p class="news-sub-title">サービス</p>
+            <p class="sub-title">サービス</p>
           </div>
           <div class="service-read read">
             <h2>屋根に関わる工事はおまかせください</h2>
@@ -153,7 +174,7 @@
             <div class="service-title">
               <div class="wrapper">
                 <div class="blue_box">
-                  <img src="/images/bnr_02.jpg" alt="" />
+                  <img src="https://placehold.jp/64x52.png" alt="" />
                   <h3>
                     雨漏り修理
                     <span class="en">Leakage Repair</span>
@@ -164,7 +185,7 @@
             </div>
 
             <div class="service-info">
-              <p>
+              <p class="textCenter">
                 「天井や壁にシミが…」雨漏りに気づかれたら、まずは丸治瓦店にご相談ください。<br />
                 屋根工事のプロがしっかりと現地調査を行い、雨漏りの原因となる箇所を確認、適正な施工方法で修理についてご提案させていただきます。
               </p>
@@ -172,7 +193,7 @@
               <ul class="service-items layout_flex">
                 <li class="service-item">
                   <figure>
-                    <img src="/images/bnr_02.jpg" alt="" />
+                    <img src="https://placehold.jp/640x360.png" alt="" />
                   </figure>
                   <figcaption>気になっている天井や壁のシミ</figcaption>
                   <p>天井にシミがある場合、棟板金の劣化や瓦などの屋根材のズレの他、天窓から雨水が浸透していたりと様々な原因が考えられます。</p>
@@ -180,7 +201,7 @@
 
                 <li class="service-item">
                   <figure>
-                    <img src="/images/bnr_02.jpg" alt="" />
+                    <img src="https://placehold.jp/640x360.png" alt="" />
                   </figure>
                   <figcaption>気になっている天井や壁のシミ</figcaption>
                   <p>天井にシミがある場合、棟板金の劣化や瓦などの屋根材のズレの他、天窓から雨水が浸透していたりと様々な原因が考えられます。</p>
@@ -188,7 +209,7 @@
 
                 <li class="service-item">
                   <figure>
-                    <img src="/images/bnr_02.jpg" alt="" />
+                    <img src="https://placehold.jp/640x360.png" alt="" />
                   </figure>
                   <figcaption>気になっている天井や壁のシミ</figcaption>
                   <p>天井にシミがある場合、棟板金の劣化や瓦などの屋根材のズレの他、天窓から雨水が浸透していたりと様々な原因が考えられます。</p>
@@ -224,10 +245,9 @@
                       </dl>
                     </div>
                   </div>
-
-                  <a href="#" class="btn">雨漏り修理施工実績一覧へ</a>
                 </div>
               </div>
+              <a href="#" class="btn">雨漏り修理施工実績一覧へ</a>
             </div>
           </div>
 
@@ -236,7 +256,7 @@
             <div class="service-title">
               <div class="wrapper">
                 <div class="blue_box">
-                  <img src="/images/bnr_02.jpg" alt="" />
+                  <img src="https://placehold.jp/64x52.png" alt="" />
                   <h3>
                     雨漏り修理
                     <span class="en">Leakage Repair</span>
@@ -255,7 +275,7 @@
               <ul class="service-items layout_flex">
                 <li class="service-item">
                   <figure>
-                    <img src="/images/bnr_02.jpg" alt="" />
+                    <img src="https://placehold.jp/640x360.png" alt="" />
                   </figure>
                   <figcaption>気になっている天井や壁のシミ</figcaption>
                   <p>天井にシミがある場合、棟板金の劣化や瓦などの屋根材のズレの他、天窓から雨水が浸透していたりと様々な原因が考えられます。</p>
@@ -263,7 +283,7 @@
 
                 <li class="service-item">
                   <figure>
-                    <img src="/images/bnr_02.jpg" alt="" />
+                    <img src="https://placehold.jp/640x360.png" alt="" />
                   </figure>
                   <figcaption>気になっている天井や壁のシミ</figcaption>
                   <p>天井にシミがある場合、棟板金の劣化や瓦などの屋根材のズレの他、天窓から雨水が浸透していたりと様々な原因が考えられます。</p>
@@ -271,7 +291,7 @@
 
                 <li class="service-item">
                   <figure>
-                    <img src="/images/bnr_02.jpg" alt="" />
+                    <img src="https://placehold.jp/640x360.png" alt="" />
                   </figure>
                   <figcaption>気になっている天井や壁のシミ</figcaption>
                   <p>天井にシミがある場合、棟板金の劣化や瓦などの屋根材のズレの他、天窓から雨水が浸透していたりと様々な原因が考えられます。</p>
@@ -307,10 +327,9 @@
                       </dl>
                     </div>
                   </div>
-
-                  <a href="#" class="btn">雨漏り修理施工実績一覧へ</a>
                 </div>
               </div>
+              <a href="#" class="btn">雨漏り修理施工実績一覧へ</a>
             </div>
           </div>
 
@@ -319,7 +338,7 @@
             <div class="service-title">
               <div class="wrapper">
                 <div class="blue_box">
-                  <img src="/images/bnr_02.jpg" alt="" />
+                  <img src="https://placehold.jp/64x52.png" alt="" />
                   <h3>
                     雨漏り修理
                     <span class="en">Leakage Repair</span>
@@ -338,7 +357,7 @@
               <ul class="service-items layout_flex">
                 <li class="service-item">
                   <figure>
-                    <img src="/images/bnr_02.jpg" alt="" />
+                    <img src="https://placehold.jp/640x360.png" alt="" />
                   </figure>
                   <figcaption>気になっている天井や壁のシミ</figcaption>
                   <p>天井にシミがある場合、棟板金の劣化や瓦などの屋根材のズレの他、天窓から雨水が浸透していたりと様々な原因が考えられます。</p>
@@ -346,7 +365,7 @@
 
                 <li class="service-item">
                   <figure>
-                    <img src="/images/bnr_02.jpg" alt="" />
+                    <img src="https://placehold.jp/640x360.png" alt="" />
                   </figure>
                   <figcaption>気になっている天井や壁のシミ</figcaption>
                   <p>天井にシミがある場合、棟板金の劣化や瓦などの屋根材のズレの他、天窓から雨水が浸透していたりと様々な原因が考えられます。</p>
@@ -354,7 +373,7 @@
 
                 <li class="service-item">
                   <figure>
-                    <img src="/images/bnr_02.jpg" alt="" />
+                    <img src="https://placehold.jp/640x360.png" alt="" />
                   </figure>
                   <figcaption>気になっている天井や壁のシミ</figcaption>
                   <p>天井にシミがある場合、棟板金の劣化や瓦などの屋根材のズレの他、天窓から雨水が浸透していたりと様々な原因が考えられます。</p>
@@ -390,10 +409,9 @@
                       </dl>
                     </div>
                   </div>
-
-                  <a href="#" class="btn">雨漏り修理施工実績一覧へ</a>
                 </div>
               </div>
+              <a href="#" class="btn">雨漏り修理施工実績一覧へ</a>
             </div>
           </div>
         </div>
@@ -404,7 +422,7 @@
         <div class="wrapper">
           <div class="util-title">
             <p class="main-title">feature</p>
-            <p class="news-sub-title">特徴</p>
+            <p class="sub-title">特徴</p>
           </div>
           <div class="feature-list">
             <ul class="feature-items">
@@ -442,43 +460,43 @@
         </div>
       </section>
 
-      <!--　products -->
+      <!-- products -->
       <section class="products" id="products">
         <div class="wrapper">
           <div class="util-title">
             <p class="main-title">products</p>
-            <p class="news-sub-title">取扱い</p>
+            <p class="sub-title">取扱い</p>
           </div>
-          <p class="center">
+          <p class="textCenter">
             丸治瓦店では、和瓦・洋瓦・防災瓦など、豊富な種類の瓦を取り扱っております。<br />
             スレート・金属屋根（ガルバリウム鋼板）の施工も行っております。
           </p>
           <div class="product_list">
             <ul class="product_items layout_flex">
-              <li>
+              <li class="product_item">
                 <h3>株式会社鶴弥</h3>
-                <figure><img src="https://maruzi-kawara.com/wp/wp-content/themes/maruzi/images/products_01.jpg" alt="株式会社鶴弥" /></figure>
+                <figure><img src="https://placehold.jp/640x360.png" alt="株式会社鶴弥" /></figure>
                 <figcaption>地震や台風、大雨といった自然災害に強く、暮らしに安全と安心をもたらす強力な「防災瓦」です。様々な外観の住宅に合わせて、形状・色ともに、バリエーション豊富に取り揃えております。</figcaption>
                 <a href="https://www.try110.com/product/" target="_blank" rel="noopener noreferrer" class="text_link link">メーカーホームページはこちら</a>
               </li>
 
-              <li>
+              <li class="product_item">
                 <h3>株式会社鶴弥</h3>
-                <figure><img src="https://maruzi-kawara.com/wp/wp-content/themes/maruzi/images/products_01.jpg" alt="株式会社鶴弥" /></figure>
+                <figure><img src="https://placehold.jp/640x360.png" alt="株式会社鶴弥" /></figure>
                 <figcaption>地震や台風、大雨といった自然災害に強く、暮らしに安全と安心をもたらす強力な「防災瓦」です。様々な外観の住宅に合わせて、形状・色ともに、バリエーション豊富に取り揃えております。</figcaption>
                 <a href="https://www.try110.com/product/" target="_blank" rel="noopener noreferrer" class="text_link link">メーカーホームページはこちら</a>
               </li>
 
-              <li>
+              <li class="product_item">
                 <h3>株式会社鶴弥</h3>
-                <figure><img src="https://maruzi-kawara.com/wp/wp-content/themes/maruzi/images/products_01.jpg" alt="株式会社鶴弥" /></figure>
+                <figure><img src="https://placehold.jp/640x360.png" alt="株式会社鶴弥" /></figure>
                 <figcaption>地震や台風、大雨といった自然災害に強く、暮らしに安全と安心をもたらす強力な「防災瓦」です。様々な外観の住宅に合わせて、形状・色ともに、バリエーション豊富に取り揃えております。</figcaption>
                 <a href="https://www.try110.com/product/" target="_blank" rel="noopener noreferrer" class="text_link link">メーカーホームページはこちら</a>
               </li>
 
-              <li>
+              <li class="product_item">
                 <h3>株式会社鶴弥</h3>
-                <figure><img src="https://maruzi-kawara.com/wp/wp-content/themes/maruzi/images/products_01.jpg" alt="株式会社鶴弥" /></figure>
+                <figure><img src="https://placehold.jp/640x360.png" alt="株式会社鶴弥" /></figure>
                 <figcaption>地震や台風、大雨といった自然災害に強く、暮らしに安全と安心をもたらす強力な「防災瓦」です。様々な外観の住宅に合わせて、形状・色ともに、バリエーション豊富に取り揃えております。</figcaption>
                 <a href="https://www.try110.com/product/" target="_blank" rel="noopener noreferrer" class="text_link link">メーカーホームページはこちら</a>
               </li>
@@ -492,19 +510,19 @@
         <div class="wrapper">
           <div class="contact_box">
             <div class="contact_box__title">
-              <h4>
+              <h4 class="textCenter">
                 地元習志野の屋根工事店として、地域のお客様を大切にしています。
                 <span>お問い合わせ・無料見積り、お気軽にご相談ください!</span>
               </h4>
-              <p>習志野市・船橋市・千葉市・八千代市とその周辺エリアの雨漏り補修・屋根リフォームとメンテナンスのご相談は丸治瓦店へ。</p>
+              <p class="textCenter">習志野市・船橋市・千葉市・八千代市とその周辺エリアの雨漏り補修・屋根リフォームとメンテナンスのご相談は丸治瓦店へ。</p>
             </div>
-            <div class="contact_box__bottom contact_box_bottom layout_flex">
-              <div class="cbb_l center">
+            <div class="contact_box__bottom layout_flex">
+              <div class="cbb_l textCenter">
                 <p>お気軽にお問い合わせください</p>
                 <div class="tel"></div>
                 <p class="time">電話受付 / 9:00〜17:00（日祝定休）</p>
               </div>
-              <div class="cbb_r center">
+              <div class="cbb_r textCenter">
                 <p>24時間365日受付中!</p>
                 <a href="#contact" class="btn">メールでのお問い合わせ</a>
               </div>
@@ -518,84 +536,84 @@
         <div class="wrapper">
           <div class="util-title">
             <p class="main-title">works</p>
-            <p class="news-sub-title">施工実績</p>
+            <p class="sub-title">施工実績</p>
           </div>
           <div class="works_list">
             <ul class="works_items layout_flex">
-              <li>
+              <li class="works_item itemColum">
                 <a href="#">
                   <div class="pict">
-                    <img src="/images/bnr_02.jpg" alt="訪問販売業者からの指摘" />
+                    <img src="https://placehold.jp/640x360.png" alt="訪問販売業者からの指摘" />
                   </div>
                   <span class="tag"> お知らせ</span>
                   <span class="area webfont">習志野市</span>
                   <h3>訪問販売業者からの指摘</h3>
                 </a>
               </li>
-              <li>
+              <li class="works_item itemColum">
                 <a href="#">
                   <div class="pict">
-                    <img src="/images/bnr_02.jpg" alt="訪問販売業者からの指摘" />
+                    <img src="https://placehold.jp/640x360.png" alt="訪問販売業者からの指摘" />
                   </div>
                   <span class="tag"> お知らせ</span>
                   <span class="area webfont">習志野市</span>
                   <h3>訪問販売業者からの指摘</h3>
                 </a>
               </li>
-              <li>
+              <li class="works_item itemColum">
                 <a href="#">
                   <div class="pict">
-                    <img src="/images/bnr_02.jpg" alt="訪問販売業者からの指摘" />
+                    <img src="https://placehold.jp/640x360.png" alt="訪問販売業者からの指摘" />
                   </div>
                   <span class="tag"> お知らせ</span>
                   <span class="area webfont">習志野市</span>
                   <h3>訪問販売業者からの指摘</h3>
                 </a>
               </li>
-              <li>
+              <li class="works_item itemColum">
                 <a href="#">
                   <div class="pict">
-                    <img src="/images/bnr_02.jpg" alt="訪問販売業者からの指摘" />
+                    <img src="https://placehold.jp/640x360.png" alt="訪問販売業者からの指摘" />
                   </div>
                   <span class="tag"> お知らせ</span>
                   <span class="area webfont">習志野市</span>
                   <h3>訪問販売業者からの指摘</h3>
                 </a>
               </li>
-              <li>
+              <li class="works_item itemColum">
                 <a href="#">
                   <div class="pict">
-                    <img src="/images/bnr_02.jpg" alt="訪問販売業者からの指摘" />
+                    <img src="https://placehold.jp/640x360.png" alt="訪問販売業者からの指摘" />
                   </div>
                   <span class="tag"> お知らせ</span>
                   <span class="area webfont">習志野市</span>
                   <h3>訪問販売業者からの指摘</h3>
                 </a>
               </li>
-              <li>
+              <li class="works_item itemColum">
                 <a href="#">
                   <div class="pict">
-                    <img src="/images/bnr_02.jpg" alt="訪問販売業者からの指摘" />
+                    <img src="https://placehold.jp/640x360.png" alt="訪問販売業者からの指摘" />
                   </div>
                   <span class="tag"> お知らせ</span>
                   <span class="area webfont">習志野市</span>
                   <h3>訪問販売業者からの指摘</h3>
                 </a>
               </li>
-              <li>
+              <li class="works_item itemColum">
                 <a href="#">
                   <div class="pict">
-                    <img src="/images/bnr_02.jpg" alt="訪問販売業者からの指摘" />
+                    <img src="https://placehold.jp/640x360.png" alt="訪問販売業者からの指摘" />
                   </div>
                   <span class="tag"> お知らせ</span>
                   <span class="area webfont">習志野市</span>
                   <h3>訪問販売業者からの指摘</h3>
                 </a>
               </li>
-              <li>
+              <li class="works_item itemColum">
                 <a href="#">
                   <div class="pict">
-                    <img src="/images/bnr_02.jpg" alt="訪問販売業者からの指摘" />
+                    <img src="https://placehold.jp/640x360.png" alt="訪問販売業者からの指摘" />
                   </div>
                   <span class="tag"> お知らせ</span>
                   <span class="area webfont">習志野市</span>
@@ -609,16 +627,16 @@
       </section>
 
       <!-- company -->
-      <section class="company" id="company">
+      <section class="company bg-sankaku" id="company">
         <div class="wrapper">
           <div class="util-title">
             <p class="main-title">company</p>
-            <p class="news-sub-title">会社案内</p>
+            <p class="sub-title">会社案内</p>
           </div>
           <div class="company_content layout_flex">
             <div class="pict">
-              <img src="/images/bnr_02.jpg" alt="丸治瓦店職人" />
-              <img src="/images/bnr_02.jpg" alt="丸治瓦店看板" />
+              <img src="https://placehold.jp/880x664.png" alt="丸治瓦店職人" />
+              <img src="https://placehold.jp/880x664.png" alt="丸治瓦店看板" />
             </div>
             <div class="company_profile">
               <h3>会社概要</h3>
@@ -659,30 +677,30 @@
                 </tbody>
               </table>
             </div>
+          </div>
 
-            <div class="greeting">
-              <h3>代表挨拶</h3>
-              <div class="layout_flex sb">
-                <div class="flex_l">
-                  <p class="greeting_title webfont">人々の暮らしを守る屋根づくり<br />かわらぬ想いとたしかな技術<br class="mb_20" /></p>
-                  <p>
-                    「やっと安心して暮らせるよ」<br />
-                    お客様からそんな言葉をかけていただいたのは、まだ、見習い時代のことでした。<br class="mb_20" />
-                    <span>
-                      ―雨が降るたびに、天井のシミやポタポタと響く音が不安で眠れない―<br />
-                      ―普段は気にも留めなかった屋根のことが、心配でしかたない― </span
-                    ><br class="mb_20" />
-                    雨漏りは、住まいの状態を悪くするだけでなく、そこに住む人々の、心の平穏をも奪ってしまいます。雨漏り修理を終えた後に見たお客様の安堵の表情は、「安心な屋根づくり」が「人々の暮らしを守る」のだということを、改めて教えてくれました。<br class="mb_20" />
-                    屋根は、住宅を快適に保つためにとても重要な役割をしています。<br />
-                    雨漏りはもちろん、自然災害にも強い、安心で安全な屋根づくりをすることで、地域の皆さんの暮らしを守りたい。だからこそ、屋根にもお客様にも、いつも誠実でありたい。<br class="mb_20" />
-                    丸治瓦店は、これからもかわらぬその想いを持ち続け、絶え間ない技術力の向上に努めて参ります。
-                  </p>
-                </div>
-                <div class="flex_r">
-                  <figure><img src="/images/bnr_02.jpg" alt="代表取締役" /></figure>
-                  <figcaption class="webfont">池田瓦店</figcaption>
-                  <p class="name webfont"><span>代表取締役</span>小野 伸也</p>
-                </div>
+          <div class="greeting">
+            <h3>代表挨拶</h3>
+            <div class="greeting_contents layout_flex sb">
+              <div class="greeting_contents__left">
+                <p class="greeting_title webfont">人々の暮らしを守る屋根づくり<br />かわらぬ想いとたしかな技術<br class="mb_20" /></p>
+                <p>
+                  「やっと安心して暮らせるよ」<br />
+                  お客様からそんな言葉をかけていただいたのは、まだ、見習い時代のことでした。<br class="mb_20" />
+                  <span>
+                    ―雨が降るたびに、天井のシミやポタポタと響く音が不安で眠れない―<br />
+                    ―普段は気にも留めなかった屋根のことが、心配でしかたない― </span
+                  ><br class="mb_20" />
+                  雨漏りは、住まいの状態を悪くするだけでなく、そこに住む人々の、心の平穏をも奪ってしまいます。雨漏り修理を終えた後に見たお客様の安堵の表情は、「安心な屋根づくり」が「人々の暮らしを守る」のだということを、改めて教えてくれました。<br class="mb_20" />
+                  屋根は、住宅を快適に保つためにとても重要な役割をしています。<br />
+                  雨漏りはもちろん、自然災害にも強い、安心で安全な屋根づくりをすることで、地域の皆さんの暮らしを守りたい。だからこそ、屋根にもお客様にも、いつも誠実でありたい。<br class="mb_20" />
+                  丸治瓦店は、これからもかわらぬその想いを持ち続け、絶え間ない技術力の向上に努めて参ります。
+                </p>
+              </div>
+              <div class="greeting_contents__right textCenter">
+                <figure><img src="https://placehold.jp/520x638.png" alt="代表取締役" /></figure>
+                <figcaption class="webfont">池田瓦店</figcaption>
+                <p class="name webfont"><span>代表取締役</span>小野 伸也</p>
               </div>
             </div>
           </div>
@@ -694,11 +712,11 @@
         <div class="wrapper">
           <div class="util-title">
             <p class="main-title">flow</p>
-            <p class="news-sub-title">施工までの流れ</p>
+            <p class="sub-title">施工までの流れ</p>
           </div>
           <div class="flow_list">
-            <ul class="flow_items layout_flex">
-              <li class="layout_flex sb wow fadeInUp">
+            <ul class="flow_items">
+              <li class="flow_item layout_flex">
                 <div class="num">01</div>
                 <div class="text_contents">
                   <h3>お問い合わせ</h3>
@@ -706,11 +724,11 @@
                   <a href="#" class="btn s_btn">お問い合わせフォーム</a>
                 </div>
                 <div class="pict">
-                  <img src="/images/bnr_02.jpg" alt="お問い合わせ" />
+                  <img src="https://placehold.jp/770x460.png" alt="お問い合わせ" />
                 </div>
               </li>
 
-              <li class="layout_flex sb wow fadeInUp">
+              <li class="flow_item layout_flex">
                 <div class="num">01</div>
                 <div class="text_contents">
                   <h3>お問い合わせ</h3>
@@ -718,11 +736,11 @@
                   <a href="#" class="btn s_btn">お問い合わせフォーム</a>
                 </div>
                 <div class="pict">
-                  <img src="/images/bnr_02.jpg" alt="お問い合わせ" />
+                  <img src="https://placehold.jp/770x460.png" alt="お問い合わせ" />
                 </div>
               </li>
 
-              <li class="layout_flex sb wow fadeInUp">
+              <li class="flow_item layout_flex">
                 <div class="num">01</div>
                 <div class="text_contents">
                   <h3>お問い合わせ</h3>
@@ -730,11 +748,11 @@
                   <a href="#" class="btn s_btn">お問い合わせフォーム</a>
                 </div>
                 <div class="pict">
-                  <img src="/images/bnr_02.jpg" alt="お問い合わせ" />
+                  <img src="https://placehold.jp/770x460.png" alt="お問い合わせ" />
                 </div>
               </li>
 
-              <li class="layout_flex sb wow fadeInUp">
+              <li class="flow_item layout_flex">
                 <div class="num">01</div>
                 <div class="text_contents">
                   <h3>お問い合わせ</h3>
@@ -742,11 +760,11 @@
                   <a href="#" class="btn s_btn">お問い合わせフォーム</a>
                 </div>
                 <div class="pict">
-                  <img src="/images/bnr_02.jpg" alt="お問い合わせ" />
+                  <img src="https://placehold.jp/770x460.png" alt="お問い合わせ" />
                 </div>
               </li>
 
-              <li class="layout_flex sb wow fadeInUp">
+              <li class="flow_item layout_flex">
                 <div class="num">01</div>
                 <div class="text_contents">
                   <h3>お問い合わせ</h3>
@@ -754,7 +772,7 @@
                   <a href="#" class="btn s_btn">お問い合わせフォーム</a>
                 </div>
                 <div class="pict">
-                  <img src="/images/bnr_02.jpg" alt="お問い合わせ" />
+                  <img src="https://placehold.jp/770x460.png" alt="お問い合わせ" />
                 </div>
               </li>
             </ul>
@@ -767,10 +785,10 @@
         <div class="wrapper">
           <div class="util-title">
             <p class="main-title">question</p>
-            <p class="news-sub-title">よくあるご質問</p>
+            <p class="sub-title">よくあるご質問</p>
           </div>
           <div class="question_list layout_flex">
-            <div class="question_l">
+            <div class="question_left">
               <div class="accordion">
                 <h3>
                   <span>Q.</span>
@@ -808,7 +826,7 @@
               </div>
             </div>
 
-            <div class="question_r">
+            <div class="question_right">
               <div class="accordion">
                 <h3>
                   <span>Q.</span>
@@ -854,19 +872,19 @@
         <div class="wrapper">
           <div class="contact_box">
             <div class="contact_box__title">
-              <h4>
+              <h4 class="textCenter">
                 地元習志野の屋根工事店として、地域のお客様を大切にしています。
                 <span>お問い合わせ・無料見積り、お気軽にご相談ください!</span>
               </h4>
-              <p>習志野市・船橋市・千葉市・八千代市とその周辺エリアの雨漏り補修・屋根リフォームとメンテナンスのご相談は丸治瓦店へ。</p>
+              <p class="textCenter">習志野市・船橋市・千葉市・八千代市とその周辺エリアの雨漏り補修・屋根リフォームとメンテナンスのご相談は丸治瓦店へ。</p>
             </div>
-            <div class="contact_box__bottom contact_box_bottom layout_flex">
-              <div class="cbb_l center">
+            <div class="contact_box__bottom layout_flex">
+              <div class="cbb_l textCenter">
                 <p>お気軽にお問い合わせください</p>
                 <div class="tel"></div>
                 <p class="time">電話受付 / 9:00〜17:00（日祝定休）</p>
               </div>
-              <div class="cbb_r center">
+              <div class="cbb_r textCenter">
                 <p>24時間365日受付中!</p>
                 <a href="#contact" class="btn">メールでのお問い合わせ</a>
               </div>
@@ -880,30 +898,51 @@
         <div class="wrapper">
           <div class="util-title">
             <p class="main-title">contact</p>
-            <p class="news-sub-title">お問い合わせ</p>
+            <p class="sub-title">お問い合わせ</p>
           </div>
+          <form action="#" method="post" class="contact-form">
+            <div class="form-group">
+              <label for="name">お名前</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">メールアドレス</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="message">お問い合わせ内容</label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">送信</button>
+          </form>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" id="footer">
       <div class="wrapper">
         <div class="footer_contents">
           <div class="footer_menu">
             <ul class="layout_flex sb">
               <li>
                 <a href="https://maruzi-kawara.com/" class="text_link">HOME</a>
-              </li><li>
+              </li>
+              <li>
                 <a href="https://maruzi-kawara.com/#service" class="text_link">屋根工事</a>
-              </li><li>
+              </li>
+              <li>
                 <a href="https://maruzi-kawara.com//works" class="text_link">施工実績</a>
-              </li><li>
+              </li>
+              <li>
                 <a href="https://maruzi-kawara.com//news" class="text_link">お知らせ</a>
-              </li><li>
+              </li>
+              <li>
                 <a href="https://maruzi-kawara.com/#company" class="text_link">会社案内</a>
-              </li><li>
+              </li>
+              <li>
                 <a href="https://maruzi-kawara.com/#question" class="text_link">よくあるご質問</a>
-              </li><li>
+              </li>
+              <li>
                 <a href="https://maruzi-kawara.com/#contact" class="text_link">お問い合わせ</a>
               </li>
             </ul>
@@ -911,20 +950,24 @@
           <div class="footer_info layout_flex">
             <div><a href="https://maruzi-kawara.com/" class="logo">池田瓦店</a></div>
             <div class="address">
-              <p>〒275-0005千葉県習志野市新栄1-8-2<br>TEL:047-475-8525<br>電話受付9:00〜17:00(日祝定休)</p>
+              <p>〒275-0005千葉県習志野市新栄1-8-2<br />TEL:047-475-8525<br />電話受付9:00〜17:00(日祝定休)</p>
             </div>
             <a href="https://www.instagram.com/maruzi.kawara/" target="_blank" rel="noopener noreferrer" class="insta_link"></a>
           </div>
-          <div class="center">
+          <div class="textCenter">
             <small>Copyright© <a href="https://maruzi-kawara.com/" class="text_link">池田川店</a> All rights reserved.</small>
           </div>
         </div>
+
         <!-- sp -->
-        <div class="bottom_menu pc_none">
+        <div class="bottom_menu for-pc">
           <a class="bottom_btn01" href="tel:0474758525" target="_blank" rel="noopener noreferrer"><span>お電話</span></a>
           <a class="bottom_btn02" href="https://maruzi-kawara.com/#contact"><span>お問い合わせ</span></a>
         </div>
       </div>
     </footer>
+
+    <script src="/assets/js/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/js/main.js"></script>
   </body>
 </html>

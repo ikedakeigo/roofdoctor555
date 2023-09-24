@@ -1,0 +1,850 @@
+// _home.scss: ホームページ専用のスタイル。
+/*===================================
+ * メインビジュアル
+===================================*/
+
+/*===================================
+ * news
+===================================*/
+
+#news {
+  position: relative;
+  padding-top: rem(120);
+  margin-bottom: rem(150);
+}
+.news {
+}
+
+.newsArea {
+}
+
+.news-items {
+  margin-top: rem(20);
+}
+
+.news-item {
+}
+
+/*===================================
+ * service
+===================================*/
+
+#service {
+  position: relative;
+  padding: rem(200) 0 rem(150);
+
+  & .accordion {
+    margin-top: rem(90);
+
+    & h3 {
+      position: relative;
+      padding: rem(10) 0;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #111111;
+      cursor: pointer;
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: "";
+        right: 0;
+        bottom: rem(22);
+        width: rem(26);
+        height: rem(2);
+        background-color: $bk-color;
+        transition: 0.35s;
+      }
+
+      &::after {
+        top: 48%;
+        transform: rotate(90deg);
+      }
+    }
+
+    & .service-price {
+    }
+  }
+
+  & .btn {
+    display: block;
+    margin: rem(60) auto 0;
+  }
+}
+
+.bg-sankaku {
+  content: "";
+  position: absolute;
+  background-image: url(/images/bg-sankaku.svg);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  // z-index: -1;
+}
+.service {
+}
+
+.service-read {
+  text-align: center;
+  h2 {
+    position: relative;
+    font-size: rem(40);
+    font-weight: 500;
+    font-family: "Shippori Mincho", serif;
+    line-height: 1;
+    padding-top: rem(100);
+    letter-spacing: 0.1em;
+  }
+
+  p {
+    margin-top: rem(60);
+    font-size: rem(18);
+  }
+}
+
+.leakage_repair {
+}
+
+.service-title {
+  position: relative;
+  height: rem(380);
+  margin-top: rem(110);
+  margin-bottom: rem(80);
+
+  & .pict {
+    position: absolute;
+    display: block;
+    background-image: url(https://placehold.jp/2072x760.png);
+    width: 67%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 6px 0 0 6px;
+    top: 0;
+    right: 0;
+    z-index: 0;
+  }
+}
+
+.blue_box {
+  position: relative;
+  display: flex;
+  width: rem(520);
+  height: rem(210);
+  background: $blue-color;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  top: 95px;
+  border-radius: 4px;
+  & img {
+    width: rem(60);
+    height: rem(50);
+    margin-right: rem(27);
+  }
+
+  & h3 {
+    color: $white-color;
+    line-height: 1.5;
+    font-size: rem(24);
+    font-family: "Shippori Mincho", serif;
+    font-weight: 700;
+    letter-spacing: 0em;
+    & .en {
+      display: block;
+      font-size: rem(15);
+    }
+  }
+}
+
+.service-items {
+}
+
+.service-item {
+  width: rem(370);
+  & img {
+  }
+  & figcaption {
+    font-size: rem(20);
+    text-align: center;
+    font-family: "Shippori Mincho", serif;
+    margin: rem(16) 0 rem(18);
+  }
+
+  & p {
+  }
+}
+
+.service-price {
+  display: none;
+  margin-top: rem(30);
+
+  & dl {
+    &:first-of-type {
+      border-radius: 4px 4px 0 0;
+      overflow: hidden;
+      & dt {
+        border-top: 0;
+      }
+      & dd {
+        border-top: 0;
+      }
+    }
+
+    & dt {
+      width: rem(238);
+      background: #efefea;
+      border-top: 1px solid #fff;
+    }
+
+    & dd {
+      width: rem(342);
+      background: #ffffff;
+      border-top: 1px solid #dfdfdf;
+    }
+  }
+
+  & dl dt {
+    display: inline-block;
+    padding: rem(19) rem(15);
+    box-sizing: border-box;
+    vertical-align: top;
+  }
+  & dl dd {
+    display: inline-block;
+    padding: rem(19) rem(15);
+    box-sizing: border-box;
+    vertical-align: top;
+  }
+}
+
+/*===================================
+ * feature
+===================================*/
+
+#features {
+  padding: rem(110) 0 rem(120);
+  // background: url(../images/features_bg.jpg)no-repeat;
+  // background-size: cover;
+  background-color: $blue-color;
+  color: #fff;
+}
+
+.features {
+}
+
+.feature-list {
+}
+
+.feature-items {
+  display: block;
+  width: rem(940);
+  margin: rem(60) auto 0;
+}
+
+.feature-item {
+  padding-bottom: rem(34);
+  margin-bottom: rem(34);
+  border-bottom: 1px solid #fff;
+  align-items: center;
+  & .num {
+    position: relative;
+    content: "";
+    background: url(/images/num_01.svg) no-repeat;
+    width: 50px;
+    height: 44px;
+    top: -16px;
+    left: 0;
+    font-size: 0;
+    background-size: contain;
+  }
+  & h3 {
+    width: rem(214);
+    font-size: rem(32);
+    margin-left: rem(12);
+    & span {
+      font-size: rem(14);
+      margin-left: rem(22);
+    }
+  }
+
+  & p {
+    line-height: 1.8;
+  }
+}
+
+/*===================================
+ * product
+===================================*/
+
+#products {
+  .textCenter {
+    margin-top: rem(60);
+    line-height: 1.8;
+  }
+}
+
+.products {
+}
+
+.product_list {
+}
+
+.product_items {
+  margin-top: rem(80);
+  flex-wrap: wrap;
+}
+
+.product_item {
+  width: rem(580);
+  padding: rem(31) rem(40) rem(35);
+  margin-bottom: rem(54);
+  border-radius: 4px;
+  box-sizing: border-box;
+  background: $white-color;
+  & h3 {
+  }
+
+  & figure {
+    margin-top: rem(13);
+    & img {
+    }
+  }
+
+  & figcaption {
+    margin-top: rem(24);
+    line-height: 1.8;
+  }
+
+  .text_link {
+    position: relative;
+    font-weight: 600;
+    margin-top: rem(20);
+    text-decoration-line: underline;
+
+    &::after {
+      position: absolute;
+      content: "";
+      display: inline-block;
+      background: url(/images/icon_link.svg) no-repeat;
+      background-size: contain;
+      width: rem(14);
+      height: rem(14);
+      margin-left: rem(5);
+      top: rem(4);
+    }
+  }
+}
+
+/*===================================
+ * min-contact
+===================================*/
+
+#min-contact {
+  padding: rem(122) 0 rem(120);
+  height: rem(640);
+  box-sizing: border-box;
+  background-color: $blue-color;
+  // background: url(../images/cta_contact_bg.jpg)no-repeat;
+  // background-size: cover;
+}
+
+.min-contact {
+}
+
+.contact_box {
+  width: rem(1120);
+  padding: rem(50) rem(90) rem(60);
+  background: rgba(17, 17, 17, 0.8);
+  color: $white-color;
+  margin: auto;
+  box-sizing: border-box;
+
+  &__title {
+    & h4 {
+      font-size: rem(26);
+      & span {
+        display: block;
+        font-size: rem(32);
+        margin-top: rem(18);
+      }
+    }
+
+    & p {
+      margin-top: rem(40);
+    }
+  }
+
+  &__bottom {
+    position: relative;
+    justify-content: space-around;
+    margin-top: rem(40);
+    &::before {
+      position: absolute;
+      content: "";
+      background: #ffffff;
+      height: 100%;
+      width: 1px;
+      margin: auto;
+      left: 0;
+      right: 0;
+    }
+    & .cbb_l {
+      & p {
+        &:first-of-type {
+          font-size: rem(20);
+          font-family: "Shippori Mincho", serif;
+          margin-bottom: rem(12);
+        }
+      }
+      & .tel {
+        max-width: 345px;
+        height: 36px;
+        font-size: 0;
+        background: url(https://placehold.jp/350x36.png) no-repeat;
+        background-size: contain;
+        margin-bottom: 5px;
+      }
+
+      & .time {
+        font-size: rem(14);
+      }
+    }
+
+    & .cbb_r {
+      & p {
+        font-size: rem(20);
+        font-family: "Shippori Mincho", serif;
+        margin-bottom: rem(12);
+      }
+      & .btn {
+        width: rem(343);
+        background: $white-color;
+        color: $bk-color;
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+/*===================================
+ * works
+===================================*/
+
+#works {
+  padding: rem(140) 0 rem(150);
+}
+
+.works {
+}
+
+.works_list {
+}
+
+.works_items {
+  margin-top: rem(80);
+  flex-wrap: wrap;
+}
+
+.works_item {
+  width: rem(282);
+  margin-right: rem(24);
+  margin-bottom: rem(55);
+  & a {
+    & .pic {
+      height: rem(190);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: rem(-10);
+      & img {
+      }
+    }
+
+    & h3 {
+      position: relative;
+      display: block;
+      font-size: rem(18);
+      margin-top: rem(8);
+      letter-spacing: 0.03em;
+    }
+  }
+}
+
+/*===================================
+ * company
+===================================*/
+#company {
+  position: relative;
+  padding-top: rem(160);
+  padding-bottom: rem(140);
+}
+.company {
+}
+
+.company_content {
+  margin-top: rem(80);
+  & .pict {
+    & img {
+      max-width: 440px;
+      &:last-of-type {
+        margin-top: rem(45);
+      }
+    }
+  }
+}
+
+.company_profile {
+  & h3 {
+  }
+
+  & table {
+    margin-top: rem(20);
+    & tbody {
+      & tr {
+        &:first-of-type {
+          & th {
+            border-top: 0;
+          }
+          & td {
+            border-top: 0;
+          }
+        }
+        & th {
+          width: rem(115);
+          font-weight: 300;
+          text-align: left;
+          color: $white-color;
+          background: $light-color;
+          border-top: 1px solid $white-color;
+          padding: rem(20) rem(10) rem(18) rem(14);
+          box-sizing: border-box;
+        }
+        & td {
+          width: rem(590);
+          background: $white-color;
+          border-top: 1px solid $bk-color;
+          padding: rem(20) rem(10) rem(18) rem(15);
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+}
+
+.greeting {
+  margin-top: rem(90);
+  & h3 {
+    font-size: rem(30);
+  }
+}
+
+.greeting_contents {
+  background: $white-color;
+  margin-top: rem(20);
+  padding: rem(53) rem(54) rem(62);
+
+  &__left {
+    width: rem(772);
+  }
+
+  &__right {
+    width: rem(260);
+
+    & figcaption {
+      font-size: rem(18);
+      margin-top: rem(10);
+    }
+    & p {
+      font-size: rem(26);
+
+      & span {
+        font-size: rem(16);
+        margin-right: rem(10);
+      }
+    }
+  }
+}
+
+.greeting_title {
+  font-size: rem(24);
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  margin-bottom: rem(23);
+}
+
+/*===================================
+ * flow
+===================================*/
+
+#flow {
+}
+.flow {
+}
+
+.flow_list {
+}
+
+.flow_items {
+  margin-top: rem(80);
+}
+
+.flow_item {
+  margin-bottom: rem(150);
+
+  & .num {
+    position: relative;
+    font-size: 0;
+    background: url(/images/flow_num01.svg) no-repeat;
+    background-size: contain;
+    width: rem(55);
+    height: rem(65);
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 1px;
+      height: rem(230);
+      background: #373737;
+      margin: auto;
+      top: rem(105);
+      left: 0;
+      right: 0;
+    }
+  }
+  & .text_contents {
+    width: rem(620);
+    & h3 {
+      font-size: rem(30);
+      margin-bottom: rem(30);
+    }
+
+    & p {
+      line-height: 1.88;
+    }
+
+    & .btn {
+      background: $bk-color;
+      margin: rem(46) auto 0 0;
+    }
+  }
+  & .pict {
+    max-width: rem(385);
+  }
+}
+
+/*===================================
+ * question
+===================================*/
+
+#question {
+  & .accordion {
+    width: rem(580);
+    margin-top: rem(55);
+    box-sizing: border-box;
+
+    & h3 {
+      position: relative;
+      font-size: rem(18);
+      height: rem(90);
+      line-height: 1.5;
+      background: #efefef;
+      padding: rem(16) rem(55) rem(18) rem(75);
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: "";
+        right: rem(18);
+        bottom: rem(45);
+        width: rem(26);
+        height: rem(2);
+        background-color: #000;
+        transition: 0.35s;
+      }
+
+      &::after {
+        top: 48%;
+        transform: rotate(90deg);
+      }
+
+      & span {
+        position: absolute;
+        font-size: 0;
+        background: url(/images/logo_metaX-3.svg) no-repeat;
+        background-size: contain;
+        width: rem(43);
+        height: rem(35);
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: rem(18);
+        z-index: 1;
+      }
+    }
+    & p {
+      display: none;
+      line-height: 1.8;
+      padding: rem(24) rem(16) 0 rem(75);
+    }
+  }
+}
+
+.question {
+}
+
+.question_list {
+}
+
+.question_left {
+}
+
+/*===================================
+ * contact
+===================================*/
+
+.contact {
+  background-color: #f5f5f5;
+  padding: 50px 0;
+
+  .wrapper {
+    width: 80%;
+    margin: 0 auto;
+
+    // .util-title {
+    //   text-align: center;
+    //   margin-bottom: 30px;
+
+    //   .main-title {
+    //     font-size: 24px;
+    //     margin-bottom: 10px;
+    //   }
+
+    //   .sub-title {
+    //     font-size: 18px;
+    //     color: #777;
+    //   }
+    // }
+
+    .contact-form {
+      .form-group {
+        margin-bottom: 20px;
+
+        label {
+          display: block;
+          margin-bottom: 5px;
+          font-weight: bold;
+        }
+
+        input,
+        textarea {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          transition: border-color 0.3s;
+
+          &:focus {
+            border-color: #007bff;
+            outline: none;
+          }
+        }
+
+        textarea {
+          resize: vertical;
+        }
+      }
+
+      .submit-btn {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  }
+}
+
+/*===================================
+ * footer
+===================================*/
+
+#footer {
+  .textCenter {
+    margin-top: rem(120);
+  }
+  small {
+    position: relative;
+    display: inline-block;
+    font-size: rem(12);
+    color: $white-color;
+
+    .text_link {
+      line-height: 1;
+      color: $white-color;
+    }
+  }
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-top: rem(45);
+  padding-bottom: rem(22);
+  background-color: $blue-color;
+  // background: url(../images/footer_bg.jpg) repeat;
+  // background-size: cover;
+}
+
+.footer_menu {
+  max-width: 962px;
+  margin: auto;
+}
+
+.footer_info {
+  margin-top: rem(85);
+  justify-content: center;
+
+  .logo {
+    position: relative;
+    display: block;
+    width: rem(411);
+    height: rem(88);
+    font-size: 0;
+    background: url(https://placehold.jp/411x88.png) no-repeat center center;
+    background-size: contain;
+    z-index: 10;
+  }
+
+  .address {
+    margin-left: rem(85);
+    color: $white-color;
+    line-height: 1.75;
+  }
+
+  .insta_link {
+    position: relative;
+    background: url(/images/logo_metaX-3.svg) no-repeat;
+    background-size: contain;
+    width: rem(26);
+    height: rem(26);
+    top: rem(4);
+    left: 0;
+    margin-left: rem(22);
+  }
+}

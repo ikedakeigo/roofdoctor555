@@ -1,0 +1,32 @@
+// _buttons.scss: ボタンのスタイル。
+
+.btn {
+  position: relative;
+  display: inline-block;
+  width: rem(372);
+  height: rem(60);
+  color: $white-color;
+  font-size: rem(16);
+  line-height: rem(60);
+  letter-spacing: 0.05em;
+  vertical-align: middle;
+  padding-left: rem(20);
+  background: $light-color;
+  box-sizing: border-box;
+}
+
+.s_btn {
+  display: block;
+  width:  rem(275);
+  margin:  rem(5) auto 0;
+}
+
+/*===================================
+ * text link
+===================================*/
+.text_link {
+  display: inline-block;
+  text-decoration: none;
+  color: $bk-color;
+  text-indent: 0;
+}

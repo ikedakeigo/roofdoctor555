@@ -1,0 +1,48 @@
+// _grid.scss: グリッドシステムやカラムのスタイル。
+
+.itemColum {
+  width: rem(290);
+  &:not(:last-child) {
+    margin-right: rem(24);
+  }
+
+  & .pic {
+    height: rem(190);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: rem(-10);
+  }
+
+  & .tag {
+    position: relative;
+    font-size: rem(14);
+    color: $white-color;
+    background: $bk-color;
+    padding: rem(8) rem(12);
+    bottom: rem(18);
+    border-radius: 0 0 0 4px;
+  }
+
+  & .area {
+    position: relative;
+    display: block;
+    font-size: rem(14);
+    padding-left: rem(23);
+
+    &::before {
+      position: absolute;
+      content: "";
+      background: #0168b7;
+      width: rem(18);
+      height: 1px;
+      left: 0;
+      top: rem(10);
+    }
+  }
+
+  & .data {
+    position: relative;
+    display: block;
+    font-size: rem(14);
+  }
+}
