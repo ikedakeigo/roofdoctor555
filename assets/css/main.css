@@ -84,24 +84,39 @@ select {
 /*===================================
  * 全体のサイズ
 ===================================*/
-@media screen and (max-width: 767px) {
-  body {
-    max-width: 640px;
-    min-width: 320px;
-  }
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 @media screen and (min-width: 768px) {
-  body {
-    max-width: 1280px;
-    width: 1280px;
-    padding: 0 4.375rem;
+  .container .container {
+    max-width: 768px;
   }
+}
+@media screen and (max-width: 767px) {
+  .container .container {
+    max-width: 480px;
+  }
+}
+
+header,
+footer,
+#slider,
+#service,
+#features,
+#min-contact,
+#company,
+#contact {
+  margin: 0 calc(50% - 50vw);
+  width: 100vw;
 }
 
 /*===================================
  * 共通のスタイル
 ===================================*/
-.wrappeer {
+.wrapper {
   position: relative;
   display: block;
   clear: both;
@@ -109,6 +124,11 @@ select {
   width: 1200px;
   margin: 0 auto;
   padding: 0 0.9375rem;
+}
+@media screen and (max-width: 767px) {
+  .wrapper {
+    width: 100%;
+  }
 }
 
 .util-title {
@@ -128,6 +148,17 @@ select {
   font-size: 1.25rem;
   margin-left: 8.75rem;
   font-weight: 700;
+}
+
+#service .util-title, #features .util-title, #products .util-title, #works .util-title, #company .util-title, #question .util-title, #contact .util-title {
+  text-align: center;
+}
+#service .sub-title, #features .sub-title, #products .sub-title, #works .sub-title, #company .sub-title, #question .sub-title, #contact .sub-title {
+  margin-left: 0rem;
+}
+
+#features .main-title {
+  color: #ebf0f2;
 }
 
 .textCenter {
@@ -210,14 +241,6 @@ p {
 ===================================*/
 .smGrid {
   font-size: 0.75rem;
-}
-
-/*===================================
- * flex
-===================================*/
-.layout_flex {
-  display: flex;
-  justify-content: space-between;
 }
 
 /*===================================
@@ -390,7 +413,6 @@ li {
 .header {
   position: relative;
   display: block;
-  width: 100%;
   height: 8.875rem;
   z-index: 3;
   padding-top: 0.5rem;
@@ -433,11 +455,81 @@ li {
   margin-right: 2.5rem;
 }
 
+/*===================================
+ * footer
+===================================*/
+#footer .textCenter {
+  margin-top: 7.5rem;
+}
+#footer small {
+  position: relative;
+  display: inline-block;
+  font-size: 0.75rem;
+  color: #ebf0f2;
+}
+#footer small .text_link {
+  line-height: 1;
+  color: #ebf0f2;
+}
+
+footer {
+  position: relative;
+  height: auto;
+  padding-top: 2.8125rem;
+  padding-bottom: 1.375rem;
+  background-color: #3e9be9;
+}
+
+.footer_menu {
+  max-width: 962px;
+  margin: auto;
+}
+
+.footer_info {
+  margin-top: 5.3125rem;
+  justify-content: center;
+}
+.footer_info .logo {
+  position: relative;
+  display: block;
+  width: 25.6875rem;
+  height: 5.5rem;
+  font-size: 0;
+  background: url(https://placehold.jp/411x88.png) no-repeat center center;
+  background-size: contain;
+  z-index: 10;
+}
+.footer_info .address {
+  margin-left: 5.3125rem;
+  color: #ebf0f2;
+  line-height: 1.75;
+}
+.footer_info .insta_link {
+  position: relative;
+  background: url(/images/logo_metaX-3.svg) no-repeat;
+  background-size: contain;
+  width: 1.625rem;
+  height: 1.625rem;
+  top: 0.25rem;
+  left: 0;
+  margin-left: 1.375rem;
+}
+
 .itemColum {
   width: 18.125rem;
 }
+@media screen and (max-width: 767px) {
+  .itemColum {
+    width: 12.5rem;
+  }
+}
 .itemColum:not(:last-child) {
   margin-right: 1.5rem;
+}
+@media screen and (max-width: 767px) {
+  .itemColum:not(:last-child) {
+    margin-right: 0rem;
+  }
 }
 .itemColum .pic {
   height: 11.875rem;
@@ -476,6 +568,19 @@ li {
 }
 
 /*===================================
+ * flex
+===================================*/
+.layout_flex {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 767px) {
+  .layout_flex {
+    display: block;
+  }
+}
+
+/*===================================
  * メインビジュアル
 ===================================*/
 /*===================================
@@ -489,6 +594,12 @@ li {
 
 .news-items {
   margin-top: 1.25rem;
+}
+@media screen and (max-width: 767px) {
+  .news-items {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 /*===================================
@@ -564,6 +675,11 @@ li {
   margin-top: 6.875rem;
   margin-bottom: 5rem;
 }
+@media screen and (max-width: 767px) {
+  .service-title {
+    margin-top: 15rem;
+  }
+}
 .service-title .pict {
   position: absolute;
   display: block;
@@ -576,24 +692,51 @@ li {
   top: 0;
   right: 0;
   z-index: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media screen and (max-width: 767px) {
+  .service-title .pict {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    width: 30rem;
+  }
 }
 
 .blue_box {
-  position: relative;
+  position: absolute;
   display: flex;
   width: 32.5rem;
-  height: 13.125rem;
+  height: 10rem;
   background: #3e9be9;
   align-items: center;
   justify-content: center;
   z-index: 1;
-  top: 95px;
   border-radius: 4px;
+  opacity: 0.8;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media screen and (max-width: 767px) {
+  .blue_box {
+    left: 50%;
+    transform: translateX(-50%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform: translateX(-50%) translateY(-100%);
+    display: block;
+  }
 }
 .blue_box img {
   width: 3.75rem;
   height: 3.125rem;
   margin-right: 1.6875rem;
+}
+@media screen and (max-width: 767px) {
+  .blue_box img {
+    margin: 0 auto;
+  }
 }
 .blue_box h3 {
   color: #ebf0f2;
@@ -603,6 +746,11 @@ li {
   font-weight: 700;
   letter-spacing: 0em;
 }
+@media screen and (max-width: 767px) {
+  .blue_box h3 {
+    text-align: center;
+  }
+}
 .blue_box h3 .en {
   display: block;
   font-size: 0.9375rem;
@@ -610,6 +758,16 @@ li {
 
 .service-item {
   width: 23.125rem;
+  padding: 2.5rem 2.5rem 2.1875rem;
+}
+@media screen and (max-width: 767px) {
+  .service-item {
+    width: 100%;
+    padding: 2.5rem 1.25rem 2.1875rem;
+  }
+  .service-item p {
+    padding: 0 3.125rem;
+  }
 }
 .service-item figcaption {
   font-size: 1.25rem;
@@ -663,10 +821,21 @@ li {
   color: #fff;
 }
 
+@media screen and (max-width: 767px) {
+  .feature-list {
+    padding: 0 3.125rem;
+  }
+}
+
 .feature-items {
   display: block;
   width: 58.75rem;
   margin: 3.75rem auto 0;
+}
+@media screen and (max-width: 767px) {
+  .feature-items {
+    width: 100%;
+  }
 }
 
 .feature-item {
@@ -720,6 +889,11 @@ li {
   box-sizing: border-box;
   background: #ebf0f2;
 }
+@media screen and (max-width: 767px) {
+  .product_item {
+    width: 100%;
+  }
+}
 .product_item figure {
   margin-top: 0.8125rem;
 }
@@ -754,6 +928,11 @@ li {
   box-sizing: border-box;
   background-color: #3e9be9;
 }
+@media screen and (max-width: 767px) {
+  #min-contact {
+    height: auto;
+  }
+}
 
 .contact_box {
   width: 70rem;
@@ -762,6 +941,12 @@ li {
   color: #ebf0f2;
   margin: auto;
   box-sizing: border-box;
+}
+@media screen and (max-width: 767px) {
+  .contact_box {
+    width: 100%;
+    padding: 3.125rem 1.875rem 3.75rem;
+  }
 }
 .contact_box__title h4 {
   font-size: 1.625rem;
@@ -789,6 +974,11 @@ li {
   left: 0;
   right: 0;
 }
+@media screen and (max-width: 767px) {
+  .contact_box__bottom::before {
+    transform: rotate(90deg);
+  }
+}
 .contact_box__bottom .cbb_l p:first-of-type {
   font-size: 1.25rem;
   font-family: "Shippori Mincho", serif;
@@ -801,6 +991,11 @@ li {
   background: url(https://placehold.jp/350x36.png) no-repeat;
   background-size: contain;
   margin-bottom: 5px;
+}
+@media screen and (max-width: 767px) {
+  .contact_box__bottom .cbb_l .tel {
+    margin: 0 auto;
+  }
 }
 .contact_box__bottom .cbb_l .time {
   font-size: 0.875rem;
@@ -827,6 +1022,11 @@ li {
 .works_items {
   margin-top: 5rem;
   flex-wrap: wrap;
+}
+@media screen and (max-width: 767px) {
+  .works_items {
+    display: flex;
+  }
 }
 
 .works_item {
@@ -859,6 +1059,7 @@ li {
 
 .company_content {
   margin-top: 5rem;
+  justify-content: space-around;
 }
 .company_content .pict img {
   max-width: 440px;
@@ -909,8 +1110,13 @@ li {
 .greeting_contents__left {
   width: 48.25rem;
 }
+@media screen and (max-width: 767px) {
+  .greeting_contents__left {
+    width: 100%;
+  }
+}
 .greeting_contents__right {
-  width: 16.25rem;
+  width: 25rem;
 }
 .greeting_contents__right figcaption {
   font-size: 1.125rem;
@@ -963,6 +1169,11 @@ li {
 .flow_item .text_contents {
   width: 38.75rem;
 }
+@media screen and (max-width: 767px) {
+  .flow_item .text_contents {
+    margin-left: 5rem;
+  }
+}
 .flow_item .text_contents h3 {
   font-size: 1.875rem;
   margin-bottom: 1.875rem;
@@ -977,14 +1188,25 @@ li {
 .flow_item .pict {
   max-width: 24.0625rem;
 }
+@media screen and (max-width: 767px) {
+  .flow_item .pict {
+    margin-left: 5rem;
+  }
+}
 
 /*===================================
  * question
 ===================================*/
 #question .accordion {
-  width: 36.25rem;
+  width: 33.125rem;
   margin-top: 3.4375rem;
+  margin-bottom: 3.4375rem;
   box-sizing: border-box;
+}
+@media screen and (max-width: 767px) {
+  #question .accordion {
+    width: 100%;
+  }
 }
 #question .accordion h3 {
   position: relative;
@@ -1077,65 +1299,4 @@ li {
 }
 #contact .wrapper .contact-form .submit-btn:hover {
   background-color: #0056b3;
-}
-
-/*===================================
- * footer
-===================================*/
-#footer .textCenter {
-  margin-top: 7.5rem;
-}
-#footer small {
-  position: relative;
-  display: inline-block;
-  font-size: 0.75rem;
-  color: #ebf0f2;
-}
-#footer small .text_link {
-  line-height: 1;
-  color: #ebf0f2;
-}
-
-footer {
-  position: relative;
-  width: 100%;
-  height: auto;
-  padding-top: 2.8125rem;
-  padding-bottom: 1.375rem;
-  background-color: #3e9be9;
-}
-
-.footer_menu {
-  max-width: 962px;
-  margin: auto;
-}
-
-.footer_info {
-  margin-top: 5.3125rem;
-  justify-content: center;
-}
-.footer_info .logo {
-  position: relative;
-  display: block;
-  width: 25.6875rem;
-  height: 5.5rem;
-  font-size: 0;
-  background: url(https://placehold.jp/411x88.png) no-repeat center center;
-  background-size: contain;
-  z-index: 10;
-}
-.footer_info .address {
-  margin-left: 5.3125rem;
-  color: #ebf0f2;
-  line-height: 1.75;
-}
-.footer_info .insta_link {
-  position: relative;
-  background: url(/images/logo_metaX-3.svg) no-repeat;
-  background-size: contain;
-  width: 1.625rem;
-  height: 1.625rem;
-  top: 0.25rem;
-  left: 0;
-  margin-left: 1.375rem;
 }

@@ -15,23 +15,47 @@ $blue-color: #3e9be9;
 /*===================================
  * 全体のサイズ
 ===================================*/
+$max-width-desktop: 1200px; // デスクトップの最大幅
+$max-width-tablet: 768px; // タブレットの最大幅
+$max-width-mobile: 480px; // モバイルの最大幅
 body {
-  @include mq(sm) {
-    max-width: 640px;
-    min-width: 320px;
-  }
+
+}
+
+.container {
+  width: 100%;
+  max-width: $max-width-desktop;
+  margin: 0 auto;
+  padding: 0 20px;
   @include mq(md) {
-    max-width: 1280px;
-    width: 1280px;
-    padding: 0  rem(70);
+    .container {
+      max-width: $max-width-tablet;
+    }
   }
+  @include mq(sm) {
+    .container {
+      max-width: $max-width-mobile;
+    }
+  }
+}
+
+header,
+footer,
+#slider,
+#service,
+#features,
+#min-contact,
+#company,
+#contact {
+  margin: 0 calc(50% - 50vw);
+  width: 100vw;
 }
 
 /*===================================
  * 共通のスタイル
 ===================================*/
 
-.wrappeer {
+.wrapper {
   position: relative;
   display: block;
   clear: both;
@@ -39,6 +63,9 @@ body {
   width: 1200px;
   margin: 0 auto;
   padding: 0 rem(15);
+  @include mq(sm){
+    width: 100%;
+  }
 }
 
 .util-title {
@@ -59,6 +86,22 @@ body {
   margin-left: rem(140);
   font-weight: 700;
 }
+
+#service,#features,#products,#works,#company,#question, #contact {
+  .util-title{
+    text-align: center;
+  }
+  .sub-title{
+    margin-left: rem(0);
+  }
+}
+
+#features{
+  .main-title{
+    color: $white-color;
+  }
+}
+
 
 .textCenter {
   text-align: center;
@@ -145,15 +188,6 @@ p {
 
 .smGrid {
   font-size: rem(12);
-}
-
-/*===================================
- * flex
-===================================*/
-
-.layout_flex {
-  display: flex;
-  justify-content: space-between;
 }
 
 /*===================================

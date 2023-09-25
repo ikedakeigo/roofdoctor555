@@ -1,1 +1,69 @@
 // _footer.scss: フッターのスタイル。
+/*===================================
+ * footer
+===================================*/
+
+#footer {
+  .textCenter {
+    margin-top: rem(120);
+  }
+  small {
+    position: relative;
+    display: inline-block;
+    font-size: rem(12);
+    color: $white-color;
+
+    .text_link {
+      line-height: 1;
+      color: $white-color;
+    }
+  }
+}
+
+footer {
+  position: relative;
+  height: auto;
+  padding-top: rem(45);
+  padding-bottom: rem(22);
+  background-color: $blue-color;
+  // background: url(../images/footer_bg.jpg) repeat;
+  // background-size: cover;
+}
+
+.footer_menu {
+  max-width: 962px;
+  margin: auto;
+}
+
+.footer_info {
+  margin-top: rem(85);
+  justify-content: center;
+
+  .logo {
+    position: relative;
+    display: block;
+    width: rem(411);
+    height: rem(88);
+    font-size: 0;
+    background: url(https://placehold.jp/411x88.png) no-repeat center center;
+    background-size: contain;
+    z-index: 10;
+  }
+
+  .address {
+    margin-left: rem(85);
+    color: $white-color;
+    line-height: 1.75;
+  }
+
+  .insta_link {
+    position: relative;
+    background: url(/images/logo_metaX-3.svg) no-repeat;
+    background-size: contain;
+    width: rem(26);
+    height: rem(26);
+    top: rem(4);
+    left: 0;
+    margin-left: rem(22);
+  }
+}

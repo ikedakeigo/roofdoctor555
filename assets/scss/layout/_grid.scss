@@ -2,8 +2,15 @@
 
 .itemColum {
   width: rem(290);
+  @include mq(sm){
+    width: rem(200);
+  }
+
   &:not(:last-child) {
     margin-right: rem(24);
+    @include mq(sm){
+      margin-right: rem(0);
+    }
   }
 
   & .pic {
@@ -44,5 +51,17 @@
     position: relative;
     display: block;
     font-size: rem(14);
+  }
+}
+
+/*===================================
+ * flex
+===================================*/
+
+.layout_flex {
+  display: flex;
+  justify-content: space-between;
+  @include mq(sm){
+    display: block;
   }
 }
