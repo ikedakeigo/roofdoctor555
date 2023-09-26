@@ -121,7 +121,6 @@ footer,
   display: block;
   clear: both;
   float: none;
-  width: 1200px;
   margin: 0 auto;
   padding: 0 0.9375rem;
 }
@@ -417,10 +416,22 @@ li {
   z-index: 3;
   padding-top: 0.5rem;
   box-sizing: border-box;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+@media screen and (min-width: 768px) {
+  .header {
+    background: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100000;
+  }
 }
 .header__inner {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  height: 9.375rem;
 }
 .header__logo {
   margin-left: 2.5rem;
@@ -431,6 +442,7 @@ li {
 
 .header__right {
   position: relative;
+  margin-left: auto;
   top: -0.5rem;
 }
 .header__right--contact {
@@ -447,12 +459,137 @@ li {
   text-align: center;
   background: #111111;
 }
+
 .header__nav {
   margin-top: 1.875rem;
+}
+.header__nav__list {
+  display: flex;
 }
 
 .header__item:not(:last-child) {
   margin-right: 2.5rem;
+}
+
+.inner {
+  padding: 0 4rem;
+}
+
+.drawer-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1004;
+  transition: transform 0.5s ease 0s;
+}
+@media screen and (min-width: 768px) {
+  .drawer-icon {
+    display: none;
+  }
+}
+.drawer-icon.is-active {
+  transform: translateX(0);
+}
+.drawer-icon.is-active .drawer-icon-bar1 {
+  transform: rotate(-45deg);
+  top: 8px;
+  background: #1b0e6a;
+  transition: transform 0.5s ease 0s;
+}
+.drawer-icon.is-active .drawer-icon-bar2 {
+  top: 10px;
+  display: none;
+}
+.drawer-icon.is-active .drawer-icon-bar3 {
+  top: 8px;
+  transform: rotate(45deg);
+  background: #1b0e6a;
+  transition: transform 0.5s ease 0s;
+}
+
+.drawer-icon-bars {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  display: block;
+}
+
+.drawer-icon-bar1,
+.drawer-icon-bar2,
+.drawer-icon-bar3 {
+  width: 30px;
+  height: 4px;
+  background: #1b0e6a;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.drawer-icon-bar1 {
+  top: 0;
+}
+
+.drawer-icon-bar2 {
+  top: 10px;
+}
+
+.drawer-icon-bar3 {
+  top: 20px;
+}
+.drawer-icon-bar3.is-active {
+  top: 8px;
+  transform: rotate(45deg);
+  background: #1b0e6a;
+  transition: transform 0.5s ease 0s;
+}
+
+@media screen and (max-width: 767px) {
+  .drawer-content {
+    width: 75%;
+    height: 100%;
+    background: hsla(0, 0%, 100%, 0.72);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1002;
+    transform: translateX(105%);
+    transition: transform 0.5s ease 0s;
+  }
+  .drawer-content.is-active {
+    transform: translateX(0);
+  }
+}
+@media screen and (min-width: 768px) {
+  .drawer-content {
+    display: none;
+  }
+}
+
+.drawer-content-item a {
+  display: block;
+  color: #1b0e6a;
+  letter-spacing: 3px;
+  padding: 18px 20px;
+  text-align: center;
+  font: 400 1.2rem "Rig Shaded";
+}
+
+@media screen and (max-width: 767px) {
+  .drawer-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    display: none;
+  }
+  .drawer-background.is-active {
+    display: block;
+  }
 }
 
 /*===================================
@@ -776,7 +913,6 @@ footer {
   margin: 1rem 0 1.125rem;
 }
 .service-price {
-  display: none;
   margin-top: 1.875rem;
 }
 .service-price dl:first-of-type {
@@ -882,7 +1018,7 @@ footer {
 }
 
 .product_item {
-  width: 36.25rem;
+  width: 31.25rem;
   padding: 1.9375rem 2.5rem 2.1875rem;
   margin-bottom: 3.375rem;
   border-radius: 4px;
@@ -923,7 +1059,7 @@ footer {
  * min-contact
 ===================================*/
 #min-contact {
-  padding: 7.625rem 0 7.5rem;
+  padding: 6.875rem 0 7.5rem;
   height: 40rem;
   box-sizing: border-box;
   background-color: #3e9be9;
@@ -935,7 +1071,6 @@ footer {
 }
 
 .contact_box {
-  width: 70rem;
   padding: 3.125rem 5.625rem 3.75rem;
   background: rgba(17, 17, 17, 0.8);
   color: #ebf0f2;
@@ -1172,6 +1307,7 @@ footer {
 @media screen and (max-width: 767px) {
   .flow_item .text_contents {
     margin-left: 5rem;
+    width: 18.75rem;
   }
 }
 .flow_item .text_contents h3 {
@@ -1198,7 +1334,7 @@ footer {
  * question
 ===================================*/
 #question .accordion {
-  width: 33.125rem;
+  width: 26.875rem;
   margin-top: 3.4375rem;
   margin-bottom: 3.4375rem;
   box-sizing: border-box;
@@ -1251,6 +1387,10 @@ footer {
   display: none;
   line-height: 1.8;
   padding: 1.5rem 1rem 0 4.6875rem;
+}
+
+.question_list {
+  justify-content: space-around;
 }
 
 /*===================================

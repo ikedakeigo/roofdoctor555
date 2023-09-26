@@ -222,7 +222,7 @@
 }
 
 .service-price {
-  display: none;
+  // display: none;
   margin-top: rem(30);
 
   & dl {
@@ -348,7 +348,7 @@
 }
 
 .product_item {
-  width: rem(580);
+  width: rem(500);
   padding: rem(31) rem(40) rem(35);
   margin-bottom: rem(54);
   border-radius: 4px;
@@ -396,7 +396,7 @@
 ===================================*/
 
 #min-contact {
-  padding: rem(122) 0 rem(120);
+  padding: rem(110) 0 rem(120);
   height: rem(640);
   box-sizing: border-box;
   background-color: $blue-color;
@@ -411,12 +411,18 @@
 }
 
 .contact_box {
-  width: rem(1120);
+
   padding: rem(50) rem(90) rem(60);
   background: rgba(17, 17, 17, 0.8);
   color: $white-color;
   margin: auto;
   box-sizing: border-box;
+  // @include mq(lg){
+  //   width: rem(1120);
+  // }
+  // @include mq(md){
+  //   width: rem(940);
+  // }
 
   @include mq(sm){
     width: 100%;
@@ -693,6 +699,7 @@
     width: rem(620);
     @include mq(sm){
       margin-left:  rem(80);
+      width:  rem(300);
     }
     & h3 {
       font-size: rem(30);
@@ -722,7 +729,7 @@
 
 #question {
   & .accordion {
-    width: rem(530);
+    width: rem(430);
     margin-top: rem(55);
     margin-bottom:  rem(55);
     box-sizing: border-box;
@@ -785,6 +792,7 @@
 }
 
 .question_list {
+  justify-content: space-around;
 }
 
 .question_left {

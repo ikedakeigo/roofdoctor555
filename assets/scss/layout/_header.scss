@@ -1,6 +1,5 @@
 // _header.scss: ヘッダーやナビゲーションのスタイル。
-
-.header{
+.header {
   position: relative;
   display: block;
   // width: 100%;
@@ -8,49 +7,183 @@
   z-index: 3;
   padding-top: rem(8);
   box-sizing: border-box;
-
-  &__inner{
-    display: flex;
-    justify-content: space-between;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  @include mq(md) {
+    background: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100000;
   }
-  &__logo{
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    height: rem(150);
+  }
+  &__logo {
     margin-left: rem(40);
 
     & #lead {
-      font-size:  rem(14);
+      font-size: rem(14);
     }
   }
 }
 
-.header__right{
-    position: relative;
-    top:  rem(-8);
-    &--contact{
-      justify-content: flex-end;
+.header__right {
+  position: relative;
+  margin-left: auto;
+  top: rem(-8);
+  &--contact {
+    justify-content: flex-end;
 
-      & .tel p {
-        font-size:  rem(14);
-      }
-
-      a {
-        width:  rem(240);
-        height:  rem(62);
-        line-height:  rem(62);
-        padding-left: 0;
-        text-align: center;
-        background: $bk-color;
-      }
+    & .tel p {
+      font-size: rem(14);
     }
-    &__nav{
 
+    a {
+      width: rem(240);
+      height: rem(62);
+      line-height: rem(62);
+      padding-left: 0;
+      text-align: center;
+      background: $bk-color;
     }
+  }
 }
 
-.header__nav{
+.header__nav {
   margin-top: rem(30);
+
+  &__list {
+    display: flex;
+  }
 }
 
-
-.header__item:not(:last-child){
+.header__item:not(:last-child) {
   margin-right: rem(40);
+}
+
+.inner {
+  padding: 0 4rem;
+}
+
+.drawer-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1004;
+  transition: transform 0.5s ease 0s;
+  @include mq(md) {
+    display: none;
+  }
+
+  &.is-active {
+    transform: translateX(0);
+    .drawer-icon-bar1 {
+      transform: rotate(-45deg);
+      top: 8px;
+      background: #1b0e6a;
+      transition: transform 0.5s ease 0s;
+    }
+
+    .drawer-icon-bar2 {
+      top: 10px;
+      display: none;
+    }
+
+    .drawer-icon-bar3 {
+      top: 8px;
+      transform: rotate(45deg);
+      background: #1b0e6a;
+      transition: transform 0.5s ease 0s;
+    }
+  }
+}
+
+.drawer-icon-bars {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  display: block;
+}
+
+.drawer-icon-bar1,
+.drawer-icon-bar2,
+.drawer-icon-bar3 {
+  width: 30px;
+  height: 4px;
+  background: #1b0e6a;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.drawer-icon-bar1 {
+  top: 0;
+}
+
+.drawer-icon-bar2 {
+  top: 10px;
+}
+
+.drawer-icon-bar3 {
+  top: 20px;
+  &.is-active {
+    top: 8px;
+    transform: rotate(45deg);
+    background: #1b0e6a;
+    transition: transform 0.5s ease 0s;
+  }
+}
+
+.drawer-content {
+  @include mq(sm) {
+    &.is-active {
+      transform: translateX(0);
+    }
+    width: 75%;
+    height: 100%;
+    background: hsla(0, 0%, 100%, 0.72);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1002;
+    transform: translateX(105%);
+    transition: transform 0.5s ease 0s;
+  }
+
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.drawer-content-item {
+  a {
+    display: block;
+    color: #1b0e6a;
+    letter-spacing: 3px;
+    padding: 18px 20px;
+    text-align: center;
+    font: 400 1.2rem "Rig Shaded";
+  }
+}
+
+.drawer-background {
+  @include mq(sm) {
+    &.is-active {
+      display: block;
+    }
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    display: none;
+  }
 }
