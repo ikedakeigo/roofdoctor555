@@ -52,6 +52,14 @@ footer,
 }
 
 /*===================================
+ * fontfamily
+===================================*/
+
+html{
+  font-family: 'Zen Kaku Gothic New';
+}
+
+/*===================================
  * 共通のスタイル
 ===================================*/
 
@@ -110,7 +118,6 @@ footer,
 section h3 {
   font-size: rem(26);
   font-weight: 500;
-  font-family: "Shippori Mincho", serif;
   line-height: 1;
   letter-spacing: 0.1em;
 }
@@ -119,7 +126,6 @@ section h2 {
   position: relative;
   font-size: rem(40);
   font-weight: 500;
-  font-family: "Shippori Mincho", serif;
   text-align: center;
   line-height: 1;
   padding-top: rem(100);
@@ -234,4 +240,23 @@ li {
   @include mq(md) {
     display: block;
   }
+}
+
+/*===================================
+ * ページトップ
+===================================*/
+#pageTop {
+  height: 60px;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  opacity: 0.6;
+  z-index: 9999;
+}
+
+/*===================================
+ * メニューを開いている時スクロール無効
+===================================*/
+body.active {
+  overflow: hidden;
 }

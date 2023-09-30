@@ -114,6 +114,13 @@ footer,
 }
 
 /*===================================
+ * fontfamily
+===================================*/
+html {
+  font-family: "Zen Kaku Gothic New";
+}
+
+/*===================================
  * 共通のスタイル
 ===================================*/
 .wrapper {
@@ -167,7 +174,6 @@ footer,
 section h3 {
   font-size: 1.625rem;
   font-weight: 500;
-  font-family: "Shippori Mincho", serif;
   line-height: 1;
   letter-spacing: 0.1em;
 }
@@ -176,7 +182,6 @@ section h2 {
   position: relative;
   font-size: 2.5rem;
   font-weight: 500;
-  font-family: "Shippori Mincho", serif;
   text-align: center;
   line-height: 1;
   padding-top: 6.25rem;
@@ -288,6 +293,25 @@ li {
   .for-sp {
     display: block;
   }
+}
+
+/*===================================
+ * ページトップ
+===================================*/
+#pageTop {
+  height: 60px;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  opacity: 0.6;
+  z-index: 9999;
+}
+
+/*===================================
+ * メニューを開いている時スクロール無効
+===================================*/
+body.active {
+  overflow: hidden;
 }
 
 .btn {
@@ -416,11 +440,9 @@ li {
   z-index: 3;
   padding-top: 0.5rem;
   box-sizing: border-box;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 }
 @media screen and (min-width: 768px) {
   .header {
-    background: #fff;
     position: fixed;
     top: 0;
     right: 0;
@@ -478,118 +500,244 @@ li {
 .drawer-icon {
   position: fixed;
   top: 20px;
-  right: 20px;
+  right: 3%;
   z-index: 1004;
   transition: transform 0.5s ease 0s;
 }
-@media screen and (min-width: 768px) {
-  .drawer-icon {
-    display: none;
-  }
-}
 .drawer-icon.is-active {
-  transform: translateX(0);
-}
-.drawer-icon.is-active .drawer-icon-bar1 {
-  transform: rotate(-45deg);
-  top: 8px;
-  background: #1b0e6a;
-  transition: transform 0.5s ease 0s;
-}
-.drawer-icon.is-active .drawer-icon-bar2 {
-  top: 10px;
-  display: none;
-}
-.drawer-icon.is-active .drawer-icon-bar3 {
-  top: 8px;
-  transform: rotate(45deg);
-  background: #1b0e6a;
-  transition: transform 0.5s ease 0s;
+  right: 5%;
 }
 
-.drawer-icon-bars {
+/*===================================
+ * ハンバーガメニュー
+===================================*/
+#menuButton {
+  cursor: pointer;
   width: 30px;
-  height: 30px;
+  height: 22.5px;
   position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.5s ease-in-out;
+  z-index: 9999;
 }
 
-.drawer-icon-bar1,
-.drawer-icon-bar2,
-.drawer-icon-bar3 {
-  width: 30px;
-  height: 4px;
-  background: #1b0e6a;
+#menuButton div {
+  background-color: #111111;
+  height: 2px;
+  width: 100%;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
+}
+
+#menuButton div:nth-child(1) {
+  transform: translate(-50%, -10px);
+}
+
+#menuButton div:nth-child(2) {
+  height: 2px;
+  width: 100%;
+  background: #111111;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
+}
+
+#menuButton div:nth-child(3) {
+  transform: translate(-50%, 10px);
+}
+
+#menuButton.active div:nth-child(1) {
+  transform: rotate(45deg) translate(-50%, 0);
+  transform-origin: 0% 50%;
+  background: #ebf0f2;
+}
+
+#menuButton.active div:nth-child(2) {
+  opacity: 0;
+}
+
+#menuButton.active div:nth-child(3) {
+  transform: rotate(-45deg) translate(-50%, 0);
+  transform-origin: 0% 50%;
+  background: #ebf0f2;
+}
+
+.navSP_sns {
+  margin-top: 50px;
+}
+
+.navSP_list_sns {
+  text-align: center;
+}
+
+.navSP_item_sns:not(:first-child) {
+  margin-top: 18px;
+}
+
+.navSP_item_sns a img {
+  width: 10%;
+}
+
+.gNav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: #252526;
+  color: #fff;
+  position: fixed;
   top: 0;
   left: 0;
+  z-index: 10;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0s 0.3s, opacity 0.3s 0s;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.drawer-icon-bar1 {
-  top: 0;
+.gNavBtn.white div {
+  background-color: #ebf0f2 !important;
 }
 
-.drawer-icon-bar2 {
-  top: 10px;
+.gNav.active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 0s, opacity 0.3s;
 }
 
-.drawer-icon-bar3 {
-  top: 20px;
-}
-.drawer-icon-bar3.is-active {
-  top: 8px;
-  transform: rotate(45deg);
-  background: #1b0e6a;
-  transition: transform 0.5s ease 0s;
+.gNav_container {
+  padding: 0 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+.gNav-inner {
+  width: calc(100% - 95px);
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gNav_primary {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 70%;
+}
+.gNav_primary span {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-size: 0.825rem;
+  font-family: "EB Garamond", serif;
+  letter-spacing: 0.05em;
+}
 @media screen and (max-width: 767px) {
-  .drawer-content {
-    width: 75%;
-    height: 100%;
-    background: hsla(0, 0%, 100%, 0.72);
-    -webkit-backdrop-filter: blur(6px);
-    backdrop-filter: blur(6px);
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 1002;
-    transform: translateX(105%);
-    transition: transform 0.5s ease 0s;
-  }
-  .drawer-content.is-active {
-    transform: translateX(0);
-  }
-}
-@media screen and (min-width: 768px) {
-  .drawer-content {
-    display: none;
+  .gNav_primary span {
+    font-size: 0.825rem;
+    margin-top: 0;
+    margin-left: 0.625rem;
   }
 }
 
-.drawer-content-item a {
-  display: block;
-  color: #1b0e6a;
-  letter-spacing: 3px;
-  padding: 18px 20px;
-  text-align: center;
-  font: 400 1.2rem "Rig Shaded";
+.gNav_primary li {
+  transform: translateY(10px);
+  opacity: 0;
+  transition: 0.3s 0s;
 }
-
 @media screen and (max-width: 767px) {
-  .drawer-background {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 1001;
-    display: none;
+  .gNav_primary li {
+    margin-top: 1.25rem;
   }
-  .drawer-background.is-active {
-    display: block;
+}
+
+.gNav.active .gNav_primary li {
+  opacity: 1;
+}
+
+.gNav_primary li,
+.gNav_sns,
+.gNav_copyright,
+.gNav_privacy {
+  transition: transform 0.4s, opacity 0.4s;
+}
+
+.gNav_primary a {
+  display: inline-block;
+  color: #fff;
+  font-size: 1.53125rem;
+}
+@media screen and (max-width: 767px) {
+  .gNav_primary a {
+    font-size: 1.375rem;
   }
+}
+
+.vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+@media screen and (max-width: 767px) {
+  .vertical {
+    writing-mode: horizontal-tb;
+  }
+}
+
+.gNav_primary li:nth-child(1) {
+  transition-delay: 0s;
+}
+
+.gNav_primary li:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.gNav_primary li:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.gNav_primary li:nth-child(4) {
+  transition-delay: 0.3s;
+}
+
+.gNav_primary li:nth-child(5) {
+  transition-delay: 0.4s;
+}
+
+.gNav_primary li:nth-child(6) {
+  transition-delay: 0.5s;
+}
+
+.gNav_primary li:nth-child(7) {
+  transition-delay: 0.6s;
+}
+
+.gNav_primary li:nth-child(8) {
+  transition-delay: 0.7s;
+}
+
+.gNav_primary li:nth-child(9) {
+  transition-delay: 0.8s;
+}
+
+.gNav_primary li:nth-child(10) {
+  transition-delay: 0.9s;
+}
+
+.fixed-body {
+  position: fixed;
+  width: 100%;
+  overflow-y: scroll;
+  top: -webkit-calc(var(--scroll-y) * -1);
+  top: calc(var(--scroll-y) * -1);
 }
 
 /*===================================
@@ -720,6 +868,42 @@ footer {
 /*===================================
  * メインビジュアル
 ===================================*/
+.homeMv {
+  background: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.lyMv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+.homeMv_video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+.homeMv_videoBtn {
+  color: #FFF;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 3.6%;
+  bottom: 35px;
+  z-index: 3;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
 /*===================================
  * news
 ===================================*/
@@ -736,6 +920,84 @@ footer {
   .news-items {
     display: flex;
     flex-wrap: wrap;
+  }
+}
+
+/*===================================
+ * homeBg
+===================================*/
+.homeBg {
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  height: 390px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0 calc(50% - 50vw);
+  width: 100vw;
+}
+.homeBg.one {
+  background-image: url(/images/mv_01.png);
+  height: 100vh;
+}
+@media screen and (max-width: 767px) {
+  .homeBg.one {
+    height: 100vh;
+    background-size: contain;
+  }
+}
+.homeBg.two {
+  background-image: url(/images/mv_02.png);
+}
+@media screen and (max-width: 767px) {
+  .homeBg.two {
+    height: 100vh;
+    background-size: contain;
+  }
+}
+.homeBg.three {
+  background-image: url(/images/mv_03.png);
+}
+@media screen and (max-width: 767px) {
+  .homeBg.three {
+    height: 100vh;
+    background-size: contain;
+  }
+}
+.homeBg.four {
+  background-image: url(/images/mv_03.jpg);
+}
+@media screen and (max-width: 767px) {
+  .homeBg.four {
+    height: 100vh;
+    background-size: contain;
+  }
+}
+.homeBg.five {
+  background-image: url(/images/mv_02.png);
+}
+@media screen and (max-width: 767px) {
+  .homeBg.five {
+    height: 100vh;
+    background-size: contain;
+  }
+}
+.homeBg.six {
+  background-image: url(/images/mv_02.png);
+}
+@media screen and (max-width: 767px) {
+  .homeBg.six {
+    height: 100vh;
+    background-size: contain;
+  }
+}
+.homeBg.seven {
+  background-image: url(/images/mv_02.png);
+}
+@media screen and (max-width: 767px) {
+  .homeBg.seven {
+    height: 100vh;
+    background-size: contain;
   }
 }
 
@@ -796,7 +1058,6 @@ footer {
   position: relative;
   font-size: 2.5rem;
   font-weight: 500;
-  font-family: "Shippori Mincho", serif;
   line-height: 1;
   padding-top: 6.25rem;
   letter-spacing: 0.1em;
@@ -879,7 +1140,6 @@ footer {
   color: #ebf0f2;
   line-height: 1.5;
   font-size: 1.5rem;
-  font-family: "Shippori Mincho", serif;
   font-weight: 700;
   letter-spacing: 0em;
 }
@@ -909,7 +1169,6 @@ footer {
 .service-item figcaption {
   font-size: 1.25rem;
   text-align: center;
-  font-family: "Shippori Mincho", serif;
   margin: 1rem 0 1.125rem;
 }
 .service-price {
@@ -946,6 +1205,11 @@ footer {
   padding: 1.1875rem 0.9375rem;
   box-sizing: border-box;
   vertical-align: top;
+}
+
+.service-info span.caption {
+  font-size: 0.75rem;
+  color: #757575;
 }
 
 /*===================================
@@ -1116,7 +1380,6 @@ footer {
 }
 .contact_box__bottom .cbb_l p:first-of-type {
   font-size: 1.25rem;
-  font-family: "Shippori Mincho", serif;
   margin-bottom: 0.75rem;
 }
 .contact_box__bottom .cbb_l .tel {
@@ -1137,7 +1400,6 @@ footer {
 }
 .contact_box__bottom .cbb_r p {
   font-size: 1.25rem;
-  font-family: "Shippori Mincho", serif;
   margin-bottom: 0.75rem;
 }
 .contact_box__bottom .cbb_r .btn {
@@ -1168,6 +1430,16 @@ footer {
   width: 17.625rem;
   margin-right: 1.5rem;
   margin-bottom: 3.4375rem;
+}
+@media screen and (max-width: 767px) {
+  .works_item {
+    width: 12.5rem;
+  }
+}
+@media screen and (max-width: 599px) {
+  .works_item {
+    width: 9.375rem;
+  }
 }
 .works_item a .pic {
   height: 11.875rem;
@@ -1230,46 +1502,43 @@ footer {
   box-sizing: border-box;
 }
 
-.greeting {
-  margin-top: 5.625rem;
-}
-.greeting h3 {
-  font-size: 1.875rem;
+.appear {
+  padding-top: 1.875rem;
 }
 
-.greeting_contents {
-  background: #ebf0f2;
-  margin-top: 1.25rem;
-  padding: 3.3125rem 3.375rem 3.875rem;
-}
-.greeting_contents__left {
-  width: 48.25rem;
-}
 @media screen and (max-width: 767px) {
-  .greeting_contents__left {
-    width: 100%;
+  .appear.layout_flex {
+    display: flex;
   }
 }
-.greeting_contents__right {
-  width: 25rem;
+
+.appear-info {
+  width: 45%;
 }
-.greeting_contents__right figcaption {
-  font-size: 1.125rem;
-  margin-top: 0.625rem;
-}
-.greeting_contents__right p {
-  font-size: 1.625rem;
-}
-.greeting_contents__right p span {
-  font-size: 1rem;
-  margin-right: 0.625rem;
+.appear-info p {
+  line-height: 2;
+  letter-spacing: 0.1em;
 }
 
-.greeting_title {
-  font-size: 1.5rem;
-  letter-spacing: 0.1em;
-  line-height: 1.5;
-  margin-bottom: 1.4375rem;
+.appear-human {
+  width: 45%;
+  align-content: flex-start;
+  align-items: flex-start;
+  flex: none;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+  display: flex;
+}
+
+.appear-imgFirst {
+  margin-right: 1.25rem;
+}
+
+.appear-imgSecond img:not(:last-child) {
+  margin-bottom: 1.25rem;
 }
 
 /*===================================
@@ -1303,6 +1572,7 @@ footer {
 }
 .flow_item .text_contents {
   width: 38.75rem;
+  margin-left: 1.25rem;
 }
 @media screen and (max-width: 767px) {
   .flow_item .text_contents {
@@ -1323,6 +1593,7 @@ footer {
 }
 .flow_item .pict {
   max-width: 24.0625rem;
+  margin-left: 1.25rem;
 }
 @media screen and (max-width: 767px) {
   .flow_item .pict {

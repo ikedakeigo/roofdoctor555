@@ -7,9 +7,7 @@
   z-index: 3;
   padding-top: rem(8);
   box-sizing: border-box;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
   @include mq(md) {
-    background: #fff;
     position: fixed;
     top: 0;
     right: 0;
@@ -72,118 +70,236 @@
 .drawer-icon {
   position: fixed;
   top: 20px;
-  right: 20px;
+  right: 3%;
   z-index: 1004;
   transition: transform 0.5s ease 0s;
-  @include mq(md) {
-    display: none;
-  }
 
   &.is-active {
-    transform: translateX(0);
-    .drawer-icon-bar1 {
-      transform: rotate(-45deg);
-      top: 8px;
-      background: #1b0e6a;
-      transition: transform 0.5s ease 0s;
-    }
-
-    .drawer-icon-bar2 {
-      top: 10px;
-      display: none;
-    }
-
-    .drawer-icon-bar3 {
-      top: 8px;
-      transform: rotate(45deg);
-      background: #1b0e6a;
-      transition: transform 0.5s ease 0s;
-    }
+    right: 5%;
   }
 }
 
-.drawer-icon-bars {
+/*===================================
+ * ハンバーガメニュー
+===================================*/
+#menuButton {
+  cursor: pointer;
   width: 30px;
-  height: 30px;
+  height: 22.5px;
   position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.5s ease-in-out;
+  z-index: 9999;
 }
 
-.drawer-icon-bar1,
-.drawer-icon-bar2,
-.drawer-icon-bar3 {
-  width: 30px;
-  height: 4px;
-  background: #1b0e6a;
+#menuButton div {
+  background-color: $bk-color;
+  height: 2px;
+  width: 100%;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
+}
+
+#menuButton div:nth-child(1) {
+  transform: translate(-50%, -10px);
+}
+
+#menuButton div:nth-child(2) {
+  height: 2px;
+  width: 100%;
+  background: $bk-color;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
+}
+
+#menuButton div:nth-child(3) {
+  transform: translate(-50%, 10px);
+}
+
+#menuButton.active div:nth-child(1) {
+  transform: rotate(45deg) translate(-50%, 0);
+  transform-origin: 0% 50%;
+  background: $white-color;
+}
+
+#menuButton.active div:nth-child(2) {
+  opacity: 0;
+}
+
+#menuButton.active div:nth-child(3) {
+  transform: rotate(-45deg) translate(-50%, 0);
+  transform-origin: 0% 50%;
+  background: $white-color;
+}
+
+.navSP_sns {
+  margin-top: 50px;
+}
+
+.navSP_list_sns {
+  text-align: center;
+}
+
+.navSP_item_sns:not(:first-child) {
+  margin-top: 18px;
+}
+
+.navSP_item_sns a img {
+  width: 10%;
+}
+
+.gNav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: #252526;
+  color: #fff;
+  position: fixed;
   top: 0;
   left: 0;
+  z-index: 10;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0s 0.3s, opacity 0.3s 0s;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.drawer-icon-bar1 {
-  top: 0;
+.gNavBtn.white div{
+  background-color: $white-color !important;
 }
 
-.drawer-icon-bar2 {
-  top: 10px;
+.gNav.active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 0s, opacity 0.3s;
 }
 
-.drawer-icon-bar3 {
-  top: 20px;
-  &.is-active {
-    top: 8px;
-    transform: rotate(45deg);
-    background: #1b0e6a;
-    transition: transform 0.5s ease 0s;
-  }
+.gNav_container {
+  padding: 0 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.drawer-content {
-  @include mq(sm) {
-    &.is-active {
-      transform: translateX(0);
+.gNav-inner {
+  width: calc(100% - 95px);
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.gNav_primary {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 70%;
+  & span {
+    display: inline-block;
+    margin-top:  rem(20);
+    font-size:  rem(13.2);
+    font-family: 'EB Garamond', serif;
+    letter-spacing: 0.05em;
+    @include mq(sm){
+      font-size:  rem(13.2);
+      margin-top: 0;
+      margin-left: rem(10);
     }
-    width: 75%;
-    height: 100%;
-    background: hsla(0, 0%, 100%, 0.72);
-    -webkit-backdrop-filter: blur(6px);
-    backdrop-filter: blur(6px);
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 1002;
-    transform: translateX(105%);
-    transition: transform 0.5s ease 0s;
-  }
-
-  @include mq(md) {
-    display: none;
   }
 }
 
-.drawer-content-item {
-  a {
-    display: block;
-    color: #1b0e6a;
-    letter-spacing: 3px;
-    padding: 18px 20px;
-    text-align: center;
-    font: 400 1.2rem "Rig Shaded";
+.gNav_primary li {
+  transform: translateY(10px);
+  opacity: 0;
+  transition: 0.3s 0s;
+  @include mq(sm){
+    margin-top: rem(20);
   }
 }
 
-.drawer-background {
-  @include mq(sm) {
-    &.is-active {
-      display: block;
-    }
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 1001;
-    display: none;
+.gNav.active .gNav_primary li {
+  opacity: 1;
+}
+
+.gNav_primary li,
+.gNav_sns,
+.gNav_copyright,
+.gNav_privacy {
+  transition: transform 0.4s, opacity 0.4s;
+}
+
+.gNav_primary a {
+  display: inline-block;
+  color: #fff;
+  font-size: rem(24.5);
+  @include mq(sm){
+    font-size: rem(22);
   }
+}
+.vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  @include mq(sm){
+    writing-mode: horizontal-tb;
+  }
+}
+
+.gNav_primary li:nth-child(1) {
+  transition-delay: 0s;
+}
+
+.gNav_primary li:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.gNav_primary li:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.gNav_primary li:nth-child(4) {
+  transition-delay: 0.3s;
+}
+
+.gNav_primary li:nth-child(5) {
+  transition-delay: 0.4s;
+}
+
+.gNav_primary li:nth-child(6) {
+  transition-delay: 0.5s;
+}
+
+.gNav_primary li:nth-child(7) {
+  transition-delay: 0.6s;
+}
+
+.gNav_primary li:nth-child(8) {
+  transition-delay: 0.7s;
+}
+
+.gNav_primary li:nth-child(9) {
+  transition-delay: 0.8s;
+}
+
+.gNav_primary li:nth-child(10) {
+  transition-delay: 0.9s;
+}
+
+
+.fixed-body {
+  position: fixed;
+  width: 100%;
+  overflow-y: scroll;
+  top: -webkit-calc(var(--scroll-y) * -1);
+  top: calc(var(--scroll-y) * -1);
 }

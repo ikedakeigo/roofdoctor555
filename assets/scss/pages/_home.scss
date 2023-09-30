@@ -2,6 +2,40 @@
 /*===================================
  * メインビジュアル
 ===================================*/
+.homeMv {
+  background: #000;
+  position: relative;
+  overflow: hidden;
+}
+.lyMv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+.homeMv_video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+.homeMv_videoBtn {
+  color: #FFF;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 3.6%;
+  bottom: 35px;
+  z-index: 3;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
 
 /*===================================
  * news
@@ -20,7 +54,7 @@
 
 .news-items {
   margin-top: rem(20);
-  @include mq(sm){
+  @include mq(sm) {
     display: flex;
     flex-wrap: wrap;
   }
@@ -29,6 +63,69 @@
 .news-item {
 }
 
+/*===================================
+ * homeBg
+===================================*/
+.homeBg {
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  height: 390px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0 calc(50% - 50vw);
+  width: 100vw;
+  &.one {
+    background-image: url(/images/mv_01.png);
+    height: 100vh;
+    @include mq(sm) {
+      height: 100vh;
+      background-size: contain;
+    }
+  }
+  &.two {
+    background-image: url(/images/mv_02.png);
+    @include mq(sm) {
+      height: 100vh;
+      background-size: contain;
+    }
+  }
+  &.three {
+    background-image: url(/images/mv_03.png);
+    @include mq(sm) {
+      height: 100vh;
+      background-size: contain;
+    }
+  }
+  &.four {
+    background-image: url(/images/mv_03.jpg);
+    @include mq(sm) {
+      height: 100vh;
+      background-size: contain;
+    }
+  }
+  &.five {
+    background-image: url(/images/mv_02.png);
+    @include mq(sm) {
+      height: 100vh;
+      background-size: contain;
+    }
+  }
+  &.six {
+    background-image: url(/images/mv_02.png);
+    @include mq(sm) {
+      height: 100vh;
+      background-size: contain;
+    }
+  }
+  &.seven {
+    background-image: url(/images/mv_02.png);
+    @include mq(sm) {
+      height: 100vh;
+      background-size: contain;
+    }
+  }
+}
 /*===================================
  * service
 ===================================*/
@@ -98,7 +195,6 @@
     position: relative;
     font-size: rem(40);
     font-weight: 500;
-    font-family: "Shippori Mincho", serif;
     line-height: 1;
     padding-top: rem(100);
     letter-spacing: 0.1em;
@@ -119,7 +215,7 @@
   margin-top: rem(110);
   margin-bottom: rem(80);
 
-  @include mq(sm){
+  @include mq(sm) {
     margin-top: rem(240);
   }
 
@@ -137,7 +233,7 @@
     z-index: 0;
     left: 50%;
     transform: translateX(-50%);
-    @include mq(sm){
+    @include mq(sm) {
       border-top-right-radius: 0;
       border-top-left-radius: 0;
       width: rem(480);
@@ -160,7 +256,7 @@
   transform: translateX(-50%);
   top: 50%;
   transform: translateY(-50%);
-  @include mq(sm){
+  @include mq(sm) {
     left: 50%;
     transform: translateX(-50%);
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
@@ -171,7 +267,7 @@
     width: rem(60);
     height: rem(50);
     margin-right: rem(27);
-    @include mq(sm){
+    @include mq(sm) {
       margin: 0 auto;
     }
   }
@@ -181,10 +277,9 @@
     color: $white-color;
     line-height: 1.5;
     font-size: rem(24);
-    font-family: "Shippori Mincho", serif;
     font-weight: 700;
     letter-spacing: 0em;
-    @include mq(sm){
+    @include mq(sm) {
       text-align: center;
     }
     & .en {
@@ -200,12 +295,12 @@
 .service-item {
   width: rem(370);
   padding: rem(40) rem(40) rem(35);
-  @include mq(sm){
+  @include mq(sm) {
     width: 100%;
     padding: rem(40) rem(20) rem(35);
 
     & p {
-      padding: 0  rem(50);
+      padding: 0 rem(50);
     }
   }
   & img {
@@ -213,7 +308,6 @@
   & figcaption {
     font-size: rem(20);
     text-align: center;
-    font-family: "Shippori Mincho", serif;
     margin: rem(16) 0 rem(18);
   }
 
@@ -264,6 +358,12 @@
   }
 }
 
+.service-info{
+  & span.caption{
+    font-size:  rem(12);
+    color: #757575;
+  }
+}
 /*===================================
  * feature
 ===================================*/
@@ -280,7 +380,7 @@
 }
 
 .feature-list {
-  @include mq(sm){
+  @include mq(sm) {
     padding: 0 rem(50);
   }
 }
@@ -289,7 +389,7 @@
   display: block;
   width: rem(940);
   margin: rem(60) auto 0;
-  @include mq(sm){
+  @include mq(sm) {
     width: 100%;
   }
 }
@@ -354,7 +454,7 @@
   border-radius: 4px;
   box-sizing: border-box;
   background: $white-color;
-  @include mq(sm){
+  @include mq(sm) {
     width: 100%;
   }
   & h3 {
@@ -402,7 +502,7 @@
   background-color: $blue-color;
   // background: url(../images/cta_contact_bg.jpg)no-repeat;
   // background-size: cover;
-  @include mq(sm){
+  @include mq(sm) {
     height: auto;
   }
 }
@@ -411,7 +511,6 @@
 }
 
 .contact_box {
-
   padding: rem(50) rem(90) rem(60);
   background: rgba(17, 17, 17, 0.8);
   color: $white-color;
@@ -424,7 +523,7 @@
   //   width: rem(940);
   // }
 
-  @include mq(sm){
+  @include mq(sm) {
     width: 100%;
     padding: rem(50) rem(30) rem(60);
   }
@@ -458,7 +557,7 @@
       margin: auto;
       left: 0;
       right: 0;
-      @include mq(sm){
+      @include mq(sm) {
         transform: rotate(90deg);
       }
     }
@@ -466,7 +565,6 @@
       & p {
         &:first-of-type {
           font-size: rem(20);
-          font-family: "Shippori Mincho", serif;
           margin-bottom: rem(12);
         }
       }
@@ -477,7 +575,7 @@
         background: url(https://placehold.jp/350x36.png) no-repeat;
         background-size: contain;
         margin-bottom: 5px;
-        @include mq(sm){
+        @include mq(sm) {
           margin: 0 auto;
         }
       }
@@ -490,7 +588,6 @@
     & .cbb_r {
       & p {
         font-size: rem(20);
-        font-family: "Shippori Mincho", serif;
         margin-bottom: rem(12);
       }
       & .btn {
@@ -498,7 +595,6 @@
         background: $white-color;
         color: $bk-color;
         padding-left: 0;
-
       }
     }
   }
@@ -521,7 +617,7 @@
 .works_items {
   margin-top: rem(80);
   flex-wrap: wrap;
-  @include mq(sm){
+  @include mq(sm) {
     display: flex;
   }
 }
@@ -530,6 +626,13 @@
   width: rem(282);
   margin-right: rem(24);
   margin-bottom: rem(55);
+  @include mq(sm){
+    width:  rem(200);
+  }
+  @include mq(xs){
+    width: rem(150);
+  }
+
   & a {
     & .pic {
       height: rem(190);
@@ -612,50 +715,46 @@
   }
 }
 
-.greeting {
-  margin-top: rem(90);
-  & h3 {
-    font-size: rem(30);
+.appear {
+  padding-top: rem(30);
+}
+
+.appear.layout_flex {
+  @include mq(sm){
+    display: flex;
   }
 }
 
-.greeting_contents {
-  background: $white-color;
-  margin-top: rem(20);
-  padding: rem(53) rem(54) rem(62);
+.appear-info {
+  width: 45%;
 
-  &__left {
-    width: rem(772);
-    @include mq(sm){
-      width: 100%;
-    }
-  }
-
-  &__right {
-    width: rem(400);
-
-    & figcaption {
-      font-size: rem(18);
-      margin-top: rem(10);
-    }
-    & p {
-      font-size: rem(26);
-
-      & span {
-        font-size: rem(16);
-        margin-right: rem(10);
-      }
-    }
+  & p {
+    line-height: 2;
+    letter-spacing: 0.1em;
   }
 }
-
-.greeting_title {
-  font-size: rem(24);
-  letter-spacing: 0.1em;
-  line-height: 1.5;
-  margin-bottom: rem(23);
+.appear-human {
+  width: 45%;
+  align-content: flex-start;
+  align-items: flex-start;
+  flex: none;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+  display: flex;
 }
 
+.appear-imgFirst {
+  margin-right: rem(20);
+}
+
+.appear-imgSecond img {
+  &:not(:last-child) {
+    margin-bottom: rem(20);
+  }
+}
 /*===================================
  * flow
 ===================================*/
@@ -697,9 +796,10 @@
   }
   & .text_contents {
     width: rem(620);
-    @include mq(sm){
-      margin-left:  rem(80);
-      width:  rem(300);
+    margin-left: rem(20);
+    @include mq(sm) {
+      margin-left: rem(80);
+      width: rem(300);
     }
     & h3 {
       font-size: rem(30);
@@ -717,8 +817,9 @@
   }
   & .pict {
     max-width: rem(385);
-    @include mq(sm){
-      margin-left:  rem(80);
+    margin-left: rem(20);
+    @include mq(sm) {
+      margin-left: rem(80);
     }
   }
 }
@@ -731,9 +832,9 @@
   & .accordion {
     width: rem(430);
     margin-top: rem(55);
-    margin-bottom:  rem(55);
+    margin-bottom: rem(55);
     box-sizing: border-box;
-    @include mq(sm){
+    @include mq(sm) {
       width: 100%;
     }
 
