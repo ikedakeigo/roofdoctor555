@@ -85,3 +85,58 @@
 	min-width: initial;
 	width: auto;
 }
+
+/*===================================
+# アコーディオン
+===================================*/
+
+.accordion_title {
+  position: relative;
+}
+
+.accordion_content {
+  display: none;
+  padding: 50px 20px;
+  margin: 0px 0px 0px 0px;
+  background-color: #EDF9FF;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+/* 矢印 */
+.accordion_title::before {
+  content: "";
+  position: absolute;
+  right: 1.25em;
+  top: 25%;
+  width: 3px;
+  height: 1em;
+  background-color: #fff;
+  transition: all 0.3s;
+  border-radius: 30px;
+  transform: rotate(-90deg);
+}
+.accordion_title::after {
+  content: "";
+  position: absolute;
+  right: 1.25em;
+  top: 25%;
+  width: 3px;
+  height: 1em;
+  background-color: #fff;
+  transition: all 0.3s;
+  border-radius: 30px;
+}
+.accordion_title.open::after {
+  transform: rotate(-90deg);
+}
+
+.accordion-content p {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.accordion_item{
+	&:not(:last-child){
+		margin-bottom: rem(30);
+	}
+}

@@ -6,7 +6,8 @@
 
     <title>池田瓦店</title>
 
-    <link rel="stylesheet" href="/assets/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
     <link rel="stylesheet" href="./dist/output.css" />
     <link rel="stylesheet" href="/assets/css/main.css" />
   </head>
@@ -80,14 +81,14 @@
 
         <!-- news -->
         <section class="news" id="news">
-          <div class="wrapper container">
+          <div class="wrapper">
             <div class="util-title">
               <p class="main-title">NEWS</p>
               <p class="sub-title">お知らせ</p>
             </div>
             <div class="newsArea">
-              <ul class="news-items layout_flex">
-                <li class="news-item itemColum">
+              <ul class="news-items layout_flex slider">
+                <li class="news-item itemColum slider-nav">
                   <a href="#">
                     <div class="pict">
                       <img src="https://placehold.jp/640x360.png" alt="お客様アンケート　西脇市" />
@@ -97,7 +98,7 @@
                     <p>お客様アンケート　西脇市</p>
                   </a>
                 </li>
-                <li class="news-item itemColum">
+                <li class="news-item itemColum slider-nav">
                   <a href="#">
                     <div class="pict">
                       <img src="https://placehold.jp/640x360.png" alt="お客様アンケート　西脇市" />
@@ -107,7 +108,7 @@
                     <p>お客様アンケート　西脇市</p>
                   </a>
                 </li>
-                <li class="news-item itemColum">
+                <li class="news-item itemColum slider-nav">
                   <a href="#">
                     <div class="pict">
                       <img src="https://placehold.jp/640x360.png" alt="お客様アンケート　西脇市" />
@@ -117,7 +118,7 @@
                     <p>お客様アンケート　西脇市</p>
                   </a>
                 </li>
-                <li class="news-item itemColum">
+                <li class="news-item itemColum slider-nav">
                   <a href="#">
                     <div class="pict">
                       <img src="https://placehold.jp/640x360.png" alt="お客様アンケート　西脇市" />
@@ -131,8 +132,10 @@
             </div>
             <div class="about-message-contact">
               <div class="about-message-contact-text">
-                もっと見る
-                <a href="#"><img src="" alt="" /></a>
+                <a href="#"
+                  ><img src="" alt="" />
+                  <span>もっと見る</span>
+                </a>
               </div>
             </div>
           </div>
@@ -513,7 +516,7 @@
                 </div>
                 <div class="cbb_r textCenter">
                   <p>24時間365日受付中!</p>
-                  <a href="#contact" class="btn">メールでのお問い合わせ</a>
+                  <a href="#contact" class="btn">LINEでのお問い合わせ</a>
                 </div>
               </div>
             </div>
@@ -728,7 +731,7 @@
                   </div>
                 </li>
                 <li class="flow_item layout_flex">
-                  <div class="num">01</div>
+                  <div class="num">02</div>
                   <div class="text_contents">
                     <h3>お見積り提出</h3>
                     <p>現地調査の結果を基に、最適な施工計画と詳細な見積もりをご提案させていただきます。</p>
@@ -738,7 +741,7 @@
                   </div>
                 </li>
                 <li class="flow_item layout_flex">
-                  <div class="num">01</div>
+                  <div class="num">03</div>
                   <div class="text_contents">
                     <h3>施工開始</h3>
                     <p>ご提案内容にご納得いただけましたら、経験豊富な職人が丁寧に施工を進めてまいります。</p>
@@ -748,7 +751,7 @@
                   </div>
                 </li>
                 <li class="flow_item layout_flex">
-                  <div class="num">01</div>
+                  <div class="num">04</div>
                   <div class="text_contents">
                     <h3>完成・アフターフォロー</h3>
                     <p>施工が完了した後も、メンテナンスやアフターサポートでお客様の快適な住まいをサポートいたします。</p>
@@ -771,8 +774,65 @@
               <p class="main-title">question</p>
               <p class="sub-title">よくあるご質問</p>
             </div>
-            <div class="question_list layout_flex">
-              <div class="question_left">
+            <div class="question_list">
+              <div class="accordion">
+                <div class="accordion_container">
+                  <div class="accordion_item faq-itemQuestion">
+                    <h3 class="question-title accordion_title js-accordion_title inviewfadeInUp open">Q.他社の見積もりが高額でした。安くできますか？</h3>
+                    <div class="accordion_content" style="display: block">
+                      <div class="accordion_inwrap">
+                        <p class="inviewfadeInUp">A.ご提供致します。他社よりも安くご案内させていただきますので、見積もり内容を電話でお知らせ下さい。</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion_item faq-itemQuestion">
+                    <h3 class="question-title accordion_title js-accordion_title inviewfadeInUp">Q.キャンセルは出来ますか？</h3>
+                    <div class="accordion_content">
+                      <div class="accordion_inwrap">
+                        <p class="inviewfadeInUp">A.可能です。見積もり内容をご確認いただいたうえで取り掛かりますので、ご安心ください。</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion_item faq-itemQuestion">
+                    <h3 class="question-title accordion_title js-accordion_title inviewfadeInUp">Q.どのエリアに対応していますか？</h3>
+                    <div class="accordion_content">
+                      <div class="accordion_inwrap">
+                        <p class="inviewfadeInUp">A.大阪、兵庫、奈良、京都に対応しております。詳しくはお電話の際にご説明いたします。</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion_item faq-itemQuestion">
+                    <h3 class="question-title accordion_title js-accordion_title inviewfadeInUp">Q.作業後に見積もりよりも高い金額を請求されることはありますか？</h3>
+                    <div class="accordion_content">
+                      <div class="accordion_inwrap">
+                        <p class="inviewfadeInUp">A.いいえ、御座いません。作業前に作業方法と料金について詳しく説明いたしますので、ご安心ください。</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion_item faq-itemQuestion">
+                    <h3 class="question-title accordion_title js-accordion_title inviewfadeInUp">Q.作業してもらうにあたって、こちらで準備することはありますか？</h3>
+                    <div class="accordion_content">
+                      <div class="accordion_inwrap">
+                        <p class="inviewfadeInUp">A.ございません。準備・後片付けも全て当社スタッフが行います。</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion_item faq-itemQuestion">
+                    <h3 class="question-title accordion_title js-accordion_title inviewfadeInUp">Q.出張料はいくらですか？</h3>
+                    <div class="accordion_content">
+                      <div class="accordion_inwrap">
+                        <p class="inviewfadeInUp">A.弊社では、出張料、見積もり料ともに全て0円となっております。作業料金のみでご案内いたします。</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="question_left">
                 <div class="accordion">
                   <h3>
                     <span>Q.</span>
@@ -845,7 +905,7 @@
                   </h3>
                   <p>中には本当に親切心で教えてくれた業者さんもいるかもしれませんが、残念ながら訪問営業によるトラブルが多発しております。その場ですぐに屋根に上がろうとする・過剰に不安をあおってくる・高額な見積りと値引き・契約を急がせる・近隣の業者ではない等には注意が必要です。<br />名刺やチラシなどをもらい、業者のことをよく調べて、信頼できそうなところに点検を依頼しましょう。<br />弊社では、訪問営業は一切行っておりません。</p>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </section>
@@ -925,8 +985,10 @@
       </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="/assets/js/swiper/swiper-bundle.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script> -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
     <script src="./node_modules/preline/dist/preline.js"></script>
     <script src="/assets/js/main.js"></script>
   </body>

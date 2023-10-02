@@ -433,6 +433,61 @@ body.active {
   width: auto;
 }
 
+/*===================================
+# アコーディオン
+===================================*/
+.accordion_title {
+  position: relative;
+}
+
+.accordion_content {
+  display: none;
+  padding: 50px 20px;
+  margin: 0px 0px 0px 0px;
+  background-color: #EDF9FF;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+/* 矢印 */
+.accordion_title::before {
+  content: "";
+  position: absolute;
+  right: 1.25em;
+  top: 25%;
+  width: 3px;
+  height: 1em;
+  background-color: #fff;
+  transition: all 0.3s;
+  border-radius: 30px;
+  transform: rotate(-90deg);
+}
+
+.accordion_title::after {
+  content: "";
+  position: absolute;
+  right: 1.25em;
+  top: 25%;
+  width: 3px;
+  height: 1em;
+  background-color: #fff;
+  transition: all 0.3s;
+  border-radius: 30px;
+}
+
+.accordion_title.open::after {
+  transform: rotate(-90deg);
+}
+
+.accordion-content p {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.accordion_item:not(:last-child) {
+  margin-bottom: 1.875rem;
+}
+
 .header {
   position: relative;
   display: block;
@@ -923,6 +978,15 @@ footer {
   }
 }
 
+.news-item {
+  padding-left: 1.25rem;
+}
+
+.about-message-contact-text {
+  margin-top: 1.875rem;
+  margin-bottom: 1.875rem;
+}
+
 /*===================================
  * homeBg
 ===================================*/
@@ -1007,32 +1071,6 @@ footer {
 #service {
   position: relative;
   padding: 12.5rem 0 9.375rem;
-}
-#service .accordion {
-  margin-top: 5.625rem;
-}
-#service .accordion h3 {
-  position: relative;
-  padding: 0.625rem 0;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #111111;
-  cursor: pointer;
-}
-#service .accordion h3::before, #service .accordion h3::after {
-  position: absolute;
-  content: "";
-  right: 0;
-  bottom: 1.375rem;
-  width: 1.625rem;
-  height: 0.125rem;
-  background-color: #111111;
-  transition: 0.35s;
-}
-#service .accordion h3::after {
-  top: 48%;
-  transform: rotate(90deg);
 }
 #service .btn {
   display: block;
@@ -1554,7 +1592,6 @@ footer {
 .flow_item .num {
   position: relative;
   font-size: 0;
-  background: url(/images/flow_num01.svg) no-repeat;
   background-size: contain;
   width: 3.4375rem;
   height: 4.0625rem;
@@ -1604,64 +1641,19 @@ footer {
 /*===================================
  * question
 ===================================*/
-#question .accordion {
-  width: 26.875rem;
-  margin-top: 3.4375rem;
-  margin-bottom: 3.4375rem;
-  box-sizing: border-box;
-}
-@media screen and (max-width: 767px) {
-  #question .accordion {
-    width: 100%;
-  }
-}
-#question .accordion h3 {
-  position: relative;
-  font-size: 1.125rem;
-  height: 5.625rem;
-  line-height: 1.5;
-  background: #efefef;
-  padding: 1rem 3.4375rem 1.125rem 4.6875rem;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
+.question-title {
+  color: #fff;
+  padding: 10px;
+  background-color: #0A1484;
+  font-size: 1.3rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   cursor: pointer;
-}
-#question .accordion h3::before, #question .accordion h3::after {
-  position: absolute;
-  content: "";
-  right: 1.125rem;
-  bottom: 2.8125rem;
-  width: 1.625rem;
-  height: 0.125rem;
-  background-color: #000;
-  transition: 0.35s;
-}
-#question .accordion h3::after {
-  top: 48%;
-  transform: rotate(90deg);
-}
-#question .accordion h3 span {
-  position: absolute;
-  font-size: 0;
-  background: url(/images/logo_metaX-3.svg) no-repeat;
-  background-size: contain;
-  width: 2.6875rem;
-  height: 2.1875rem;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  left: 1.125rem;
-  z-index: 1;
-}
-#question .accordion p {
-  display: none;
-  line-height: 1.8;
-  padding: 1.5rem 1rem 0 4.6875rem;
 }
 
 .question_list {
-  justify-content: space-around;
+  margin-top: 6.25rem;
+  margin-bottom: 6.25rem;
 }
 
 /*===================================

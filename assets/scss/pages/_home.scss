@@ -61,6 +61,16 @@
 }
 
 .news-item {
+  padding-left: rem(20);
+}
+
+.about-message-contact {
+
+}
+
+.about-message-contact-text{
+  margin-top: rem(30);
+  margin-bottom: rem(30);
 }
 
 /*===================================
@@ -134,39 +144,39 @@
   position: relative;
   padding: rem(200) 0 rem(150);
 
-  & .accordion {
-    margin-top: rem(90);
+  // & .accordion {
+  //   margin-top: rem(90);
 
-    & h3 {
-      position: relative;
-      padding: rem(10) 0;
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      border-bottom: 1px solid #111111;
-      cursor: pointer;
+  //   & h3 {
+  //     position: relative;
+  //     padding: rem(10) 0;
+  //     box-sizing: border-box;
+  //     display: flex;
+  //     align-items: center;
+  //     border-bottom: 1px solid #111111;
+  //     cursor: pointer;
 
-      &::before,
-      &::after {
-        position: absolute;
-        content: "";
-        right: 0;
-        bottom: rem(22);
-        width: rem(26);
-        height: rem(2);
-        background-color: $bk-color;
-        transition: 0.35s;
-      }
+  //     &::before,
+  //     &::after {
+  //       position: absolute;
+  //       content: "";
+  //       right: 0;
+  //       bottom: rem(22);
+  //       width: rem(26);
+  //       height: rem(2);
+  //       background-color: $bk-color;
+  //       transition: 0.35s;
+  //     }
 
-      &::after {
-        top: 48%;
-        transform: rotate(90deg);
-      }
-    }
+  //     &::after {
+  //       top: 48%;
+  //       transform: rotate(90deg);
+  //     }
+  //   }
 
-    & .service-price {
-    }
-  }
+  //   & .service-price {
+  //   }
+  // }
 
   & .btn {
     display: block;
@@ -777,7 +787,7 @@
   & .num {
     position: relative;
     font-size: 0;
-    background: url(/images/flow_num01.svg) no-repeat;
+    // background: url(/images/flow_num01.svg) no-repeat;
     background-size: contain;
     width: rem(55);
     height: rem(65);
@@ -828,75 +838,19 @@
  * question
 ===================================*/
 
-#question {
-  & .accordion {
-    width: rem(430);
-    margin-top: rem(55);
-    margin-bottom: rem(55);
-    box-sizing: border-box;
-    @include mq(sm) {
-      width: 100%;
-    }
-
-    & h3 {
-      position: relative;
-      font-size: rem(18);
-      height: rem(90);
-      line-height: 1.5;
-      background: #efefef;
-      padding: rem(16) rem(55) rem(18) rem(75);
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-
-      &::before,
-      &::after {
-        position: absolute;
-        content: "";
-        right: rem(18);
-        bottom: rem(45);
-        width: rem(26);
-        height: rem(2);
-        background-color: #000;
-        transition: 0.35s;
-      }
-
-      &::after {
-        top: 48%;
-        transform: rotate(90deg);
-      }
-
-      & span {
-        position: absolute;
-        font-size: 0;
-        background: url(/images/logo_metaX-3.svg) no-repeat;
-        background-size: contain;
-        width: rem(43);
-        height: rem(35);
-        margin: auto;
-        top: 0;
-        bottom: 0;
-        left: rem(18);
-        z-index: 1;
-      }
-    }
-    & p {
-      display: none;
-      line-height: 1.8;
-      padding: rem(24) rem(16) 0 rem(75);
-    }
-  }
-}
-
-.question {
+.question-title {
+  color: #fff;
+  padding: 10px;
+  background-color: #0A1484;
+  font-size: 1.3rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  cursor: pointer;
 }
 
 .question_list {
-  justify-content: space-around;
-}
-
-.question_left {
+  margin-top: rem(100);
+  margin-bottom: rem(100);
 }
 
 /*===================================
