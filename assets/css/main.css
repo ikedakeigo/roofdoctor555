@@ -156,10 +156,22 @@ html {
   font-weight: 700;
 }
 
-#service .util-title, #features .util-title, #products .util-title, #works .util-title, #company .util-title, #question .util-title, #contact .util-title {
+#service .util-title,
+#features .util-title,
+#products .util-title,
+#works .util-title,
+#company .util-title,
+#question .util-title,
+#contact .util-title {
   text-align: center;
 }
-#service .sub-title, #features .sub-title, #products .sub-title, #works .sub-title, #company .sub-title, #question .sub-title, #contact .sub-title {
+#service .sub-title,
+#features .sub-title,
+#products .sub-title,
+#works .sub-title,
+#company .sub-title,
+#question .sub-title,
+#contact .sub-title {
   margin-left: 0rem;
 }
 
@@ -312,6 +324,32 @@ li {
 ===================================*/
 body.active {
   overflow: hidden;
+}
+
+/*===================================
+ * パンくず
+===================================*/
+.breadcrumb {
+  color: #8d8d8d;
+  font-size: 12px;
+  margin-bottom: 14px;
+}
+.breadcrumb a {
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+}
+.breadcrumb .home::before {
+  content: "\f015";
+  font-family: "Font Awesome 5 Free", sans-serif;
+  font-weight: 900;
+  margin-right: 10px;
+}
+.breadcrumb i {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.breadcrumb i::before {
+  content: "\f105";
 }
 
 .btn {
@@ -1702,4 +1740,365 @@ footer {
 }
 #contact .wrapper .contact-form .submit-btn:hover {
   background-color: #0056b3;
+}
+
+#content {
+  padding-top: 9.375rem;
+  margin-bottom: 9.375rem;
+}
+#content ul li {
+  display: block;
+}
+
+.entry {
+  background: #fff;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
+  padding: 2.5rem 2.5rem 0.75rem;
+}
+
+.entry-label {
+  display: inline-block;
+  margin-bottom: 1.125rem;
+}
+.entry-label a {
+  background: #3e9be9;
+  color: #fff;
+  display: block;
+  font-size: 12px;
+  padding: 4px 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+}
+
+.entry-title {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 18px;
+}
+
+.entry-meta {
+  align-items: center;
+  display: flex;
+  margin-bottom: 18px;
+}
+
+.entry-published,
+.entry-updated {
+  color: #808080;
+  font-size: 12px;
+}
+
+.entry-published::before {
+  content: "\f073";
+  font-family: "Font Awesome 5 Free", sans-serif;
+  font-weight: 400;
+  margin-right: 8px;
+}
+
+.entry-updated {
+  margin-left: 27px;
+}
+.entry-updated::before {
+  content: "\f1da";
+  font-weight: 900;
+}
+
+.entry-img {
+  text-align: center;
+}
+
+.entry-body {
+  margin-top: 32px;
+  padding-bottom: 44px;
+}
+.entry-body p {
+  line-height: 1.875;
+  margin-top: 30px;
+}
+.entry-body a {
+  color: #1592e6;
+  font-weight: 600;
+  transition: all 0.3s ease 0s;
+}
+.entry-body h3 {
+  border-bottom: 3px solid #3e9be9;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 24px;
+  margin-top: 84px;
+  padding-bottom: 14px;
+}
+.entry-body h4 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  margin-top: 82px;
+  padding-left: 42px;
+  position: relative;
+}
+.entry-body h4::before {
+  color: #3e9be9;
+  content: "\f00c";
+  font-size: 26px;
+  font-weight: 900;
+  left: 0;
+  position: absolute;
+  top: -8px;
+}
+.entry-body strong {
+  font-weight: 600;
+}
+.entry-body .entry-btn {
+  margin: 1em 0;
+  text-align: center;
+}
+.entry-body .entry-btn .btn {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#toc_container {
+  background: #fff;
+  border: 2px solid #3e9be9;
+  margin-top: 64px;
+  padding: 20px 30px;
+}
+#toc_container .toc_title {
+  border-bottom: 2px solid #3e9be9;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  margin-top: 0;
+  padding-bottom: 6px;
+  text-align: center;
+}
+#toc_container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#toc_container ul li {
+  counter-increment: toc;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+#toc_container ul li a {
+  padding-left: 36px;
+}
+#toc_container ul li ul {
+  margin-top: 6px;
+  padding-left: 36px;
+}
+#toc_container ul li ul li {
+  margin-bottom: 2px;
+  margin-top: 0;
+}
+#toc_container ul a {
+  color: #333;
+  display: inline-block;
+  font-weight: 600;
+  position: relative;
+  text-decoration: none;
+}
+#toc_container ul .num::before {
+  background: #3e9be9;
+  border-radius: 50%;
+  color: #fff;
+  content: counter(toc);
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  height: 26px;
+  left: 0;
+  line-height: 26px;
+  margin-top: -2px;
+  min-width: 26px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+}
+
+.entry-body h2 {
+  background: #ebebeb;
+  border-radius: 3px;
+  border-top: 6px solid #3e9be9;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 38px;
+  margin-top: 79px;
+  padding: 24px 20px;
+  position: relative;
+  text-align: left;
+}
+.entry-body h2::after {
+  border: 5px solid transparent;
+  border-top: 15px solid #ebebeb;
+  content: "";
+  height: 0;
+  left: 24px;
+  position: absolute;
+  top: 100%;
+  width: 0;
+}
+
+.entry-tag-items {
+  border-top: 1px solid #e2e2e2;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.entry-tag-head {
+  background: #808080;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-right: 15px;
+  padding: 6px 15px 0;
+}
+.entry-tag-head::before {
+  content: "\f02b";
+  font-family: "Font Awesome 5 Free", sans-serif;
+  font-weight: 900;
+  margin-right: 5px;
+}
+
+.entry-tag-item {
+  margin-bottom: 10px;
+  margin-right: 15px;
+}
+.entry-tag-item a {
+  border: 1px solid #e2e2e2;
+  border-radius: 3px;
+  color: #808080;
+  display: block;
+  font-size: 14px;
+  padding: 6px 18px 5px;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+}
+
+.entry-related {
+  margin-top: 20px;
+}
+
+.related-title {
+  font-family: "HiraKakuPro-W6", "ヒラギノ角ゴ Pro W6", "Meiryo", "Meiryo", "Noto Sans Japanese", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 22px;
+}
+
+.related-items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.related-item {
+  display: block;
+  margin-bottom: 21px;
+  margin-right: 18px;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+  width: calc(25% - 13.5px);
+}
+
+.related-item-img {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.related-item-title {
+  font-family: "HiraKakuPro-W6", "ヒラギノ角ゴ Pro W6", "Meiryo", "Meiryo", "Noto Sans Japanese", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.57143;
+}
+
+#secondary {
+  margin-left: auto;
+  width: 30.90909%;
+}
+
+.widget {
+  margin-bottom: 50px;
+}
+
+.widget-title {
+  background: transparent url(../img/headign-line.png) repeat-x bottom center/340px auto;
+  font-family: "HiraKakuPro-W6", "ヒラギノ角ゴ Pro W6", "Meiryo", "Meiryo", "Noto Sans Japanese", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  padding: 0 0 16px;
+}
+
+.wprofile-img {
+  margin-bottom: 26px;
+  text-align: center;
+}
+.wprofile-img img {
+  width: 230px;
+}
+
+.wprofile-content {
+  font-size: 14px;
+  line-height: 1.71429;
+  margin-bottom: 38px;
+  padding: 0 18px;
+}
+
+.wprofile-sns {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.wprofile-sns-item {
+  margin-right: 40px;
+}
+
+.wpost-item {
+  display: flex;
+  margin-bottom: 20px;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+}
+
+.wpost-item-img {
+  width: 120px;
+}
+
+.wpost-item-body {
+  padding: 0 0 0 10px;
+  width: calc(100% - 120px);
+}
+
+.wpost-item-title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.57143;
+}
+
+.m_ranking .wpost-item::after {
+  background: #01b3a7;
+  color: #fff;
+  content: counter(ranking);
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+  height: 20px;
+  left: 0;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 20px;
 }

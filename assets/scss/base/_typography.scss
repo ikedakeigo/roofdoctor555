@@ -19,7 +19,6 @@ $max-width-desktop: 1200px; // デスクトップの最大幅
 $max-width-tablet: 768px; // タブレットの最大幅
 $max-width-mobile: 480px; // モバイルの最大幅
 body {
-
 }
 
 .container {
@@ -55,8 +54,8 @@ footer,
  * fontfamily
 ===================================*/
 
-html{
-  font-family: 'Zen Kaku Gothic New';
+html {
+  font-family: "Zen Kaku Gothic New";
 }
 
 /*===================================
@@ -71,7 +70,7 @@ html{
   // width: 1200px;
   margin: 0 auto;
   padding: 0 rem(15);
-  @include mq(sm){
+  @include mq(sm) {
     width: 100%;
   }
 }
@@ -95,21 +94,26 @@ html{
   font-weight: 700;
 }
 
-#service,#features,#products,#works,#company,#question, #contact {
-  .util-title{
+#service,
+#features,
+#products,
+#works,
+#company,
+#question,
+#contact {
+  .util-title {
     text-align: center;
   }
-  .sub-title{
+  .sub-title {
     margin-left: rem(0);
   }
 }
 
-#features{
-  .main-title{
+#features {
+  .main-title {
     color: $white-color;
   }
 }
-
 
 .textCenter {
   text-align: center;
@@ -259,4 +263,35 @@ li {
 ===================================*/
 body.active {
   overflow: hidden;
+}
+
+/*===================================
+ * パンくず
+===================================*/
+.breadcrumb {
+  color: #8d8d8d;
+  font-size: 12px;
+  margin-bottom: 14px;
+
+  & a {
+    text-decoration: none;
+  transition: all 0.3s ease 0s;
+  }
+
+  .home {
+    &::before{
+      content: "\f015";
+      font-family: "Font Awesome 5 Free", sans-serif;
+      font-weight: 900;
+      margin-right: 10px;
+    }
+  }
+
+  i {
+    margin-left: 15px;
+    margin-right: 15px;
+    &::before{
+      content: "\f105";
+    }
+  }
 }
